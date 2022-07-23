@@ -4,12 +4,14 @@ import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import { useTranslation } from 'react-i18next'
 import Footer from 'src/components/Footer'
+import NavBar from 'src/components/NavBar'
 
 const Home: NextPage = () => {
   const { t } = useTranslation('common')
 
   return (
     <>
+      <NavBar />
       <Container maxWidth='lg'>
         <Typography component='h1' color='text.primary'>
           {t('title')}
