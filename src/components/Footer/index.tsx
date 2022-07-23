@@ -130,8 +130,8 @@ const Footer = () => {
                   {footer.title}
                 </Typography>
                 <ul>
-                  {footer.descriptions.map(item => (
-                    <li key={item.text}>
+                  {footer.descriptions.map((item, index) => (
+                    <li key={index}>
                       <Link href={item.path} variant='subtitle1' color='text.secondary' fontSize={['14px', '16px']}>
                         {item.text}
                       </Link>
