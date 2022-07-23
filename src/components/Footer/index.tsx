@@ -3,6 +3,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Link from 'src/components/Link'
 import GradientButton from '../Buttons/GradientButton'
+import ContactIcons from '../ContactIcons'
 import BgSvg from './BgSvg'
 
 const Footer = () => {
@@ -140,7 +141,7 @@ const Footer = () => {
               </Grid>
             ))}
           </Grid>
-          <Box pt={['32px', '0']}>
+          <Box pt={['32px', '0']} mb='20px'>
             <Typography variant='h6' color='text.primary' gutterBottom fontSize={['18px', '20px']} lineHeight='30px'>
               {t('Subscribe to our newsletter')}
             </Typography>
@@ -189,16 +190,16 @@ const Footer = () => {
         <Box
           sx={{
             display: 'flex',
-            flexDirection: ['column', 'column', 'row'],
+            flexDirection: ['column-reverse', 'column-reverse', 'row'],
             justifyContent: ['center', 'space-between'],
             alignItems: 'center',
             mt: ['50px', '24px'],
             pb: ['40px', '56px'],
           }}
         >
-          <Typography>{t('Copyright')}</Typography>
+          <Typography mt={['20px', '20px', 0]}>{t('Copyright')}</Typography>
           <Box>
-            <Typography>{t('Copyright')}</Typography>
+            <ContactIcons />
           </Box>
         </Box>
       </Container>
