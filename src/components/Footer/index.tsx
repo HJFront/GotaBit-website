@@ -151,6 +151,7 @@ const Footer = () => {
               sx={{
                 display: 'flex',
               }}
+              maxWidth='300px'
             >
               <TextField
                 name='email'
