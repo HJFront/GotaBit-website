@@ -5,6 +5,7 @@ import { Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import NavBar from 'src/components/NavBar'
 import CoreModules from 'src/components/Home/CoreModules'
+import BuildIng from 'src/components/Home/BuildIng'
 import Footer from 'src/components/Footer'
 
 const Home: NextPage = () => {
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
           {t('title')}
         </Typography>
         <CoreModules />
+        <BuildIng />
       </Container>
       <Footer />
     </>
