@@ -24,7 +24,7 @@ const CoreModules = () => {
   ]
 
   return (
-    <Box position='relative' component='footer'>
+    <Box position='relative' component='div'>
       <Container maxWidth='lg'>
         <Typography
           component='h3'
