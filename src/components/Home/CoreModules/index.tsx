@@ -24,7 +24,7 @@ const CoreModules = () => {
   ]
 
   return (
-    <Box position='relative' component='div'>
+    <Box position='relative' component='div' marginBottom={['100px', '200px']}>
       <Container maxWidth='lg'>
         <Typography
           component='h3'
@@ -66,7 +66,13 @@ const CoreModules = () => {
                   justifyContent: ['flexStart', 'center'],
                 }}>
                 {item.component}
-                <Typography variant='h6' color='text.primary' gutterBottom fontSize={['18px', '24px']}>
+                <Typography
+                  variant='h6'
+                  color='text.primary'
+                  gutterBottom fontSize={['18px', '24px']}
+                  marginTop={[0, '42px']}
+                  marginLeft={['16px', '0']}
+                >
                   {item.title}
                 </Typography>
               </Grid>
