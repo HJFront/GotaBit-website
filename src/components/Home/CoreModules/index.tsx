@@ -1,10 +1,15 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Container, Grid, Typography } from '@mui/material'
+import Title from 'src/components/Title'
 import GotaBitscan from './GotaBitscan'
 import GotaBitWallet from './GotaBitWallet'
 import Validator from './Validator'
 
+/**
+ * CoreModules Module Components
+ * @returns 
+ */
 const CoreModules = () => {
   const { t } = useTranslation('index')
 
@@ -26,27 +31,7 @@ const CoreModules = () => {
   return (
     <Box position='relative' component='div' marginBottom={['100px', '200px']}>
       <Container maxWidth='lg'>
-        <Typography
-          component='h3'
-          fontWeight='600'
-          textAlign={{
-            sm: 'center',
-          }}
-          fontSize={{
-            xs: '32px',
-            sm: '56px',
-          }}
-          lineHeight={{
-            xs: 1.2,
-          }}
-          mb={{
-            xs: '24px',
-            sm: '56px',
-          }}
-        >
-          {t('Core modules')}
-        </Typography>
-
+        <Title>{t('Core modules')}</Title>
         <Box
           sx={{
             display: 'flex',
