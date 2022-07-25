@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { Box, Container, Grid, Typography } from '@mui/material'
+import { Box, Container, Grid, Paper, Typography } from '@mui/material'
 import Title from 'src/components/Title'
 import Identification from './Identification'
 import NFT from './NFT'
@@ -10,7 +10,7 @@ import GameFi from './SocialFi'
 
 /**
  * BuildIng Module Components
- * @returns 
+ * @returns
  */
 const BuildIng = () => {
   const { t } = useTranslation('index')
@@ -44,37 +44,38 @@ const BuildIng = () => {
 
   return (
     <Box position='relative' component='div' marginBottom={['100px', '200px']}>
-      <Container maxWidth='lg'>
+      <Container maxWidth='lg' sx={{ padding: 0 }}>
         <Title sx={{ mb: ['8px', '12px'] }}>{t('Build with us')}</Title>
-        <Title type="subTitle" sx={{ mb: ['24px', '56px'] }}>{t('Build with us Subtitle')}</Title>
+        <Title type='subTitle' sx={{ mb: ['24px', '56px'] }}>{t('Build with us Subtitle')}</Title>
         <Box
           sx={{
+            flexGrow: 1,
             display: 'flex',
             flexDirection: ['column', 'column', 'row'],
           }}
         >
-          <Grid flex='1' container spacing={4} justifyContent='space-evenly' sx={{
-            display: 'flex',
-            flexDirection: ['column', 'row'],
-          }}>
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {buildList.map(item => (
-              <Grid item sm={3} key={item.title}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  flexDirection: ['row', 'column'],
-                  justifyContent: ['flexStart', 'center'],
-                }}>
-                {item.component}
-                <Typography
-                  variant='h6'
-                  color='text.primary'
-                  gutterBottom fontSize={['18px', '24px']}
-                  marginTop={[0, '42px']}
-                  marginLeft={['16px', '0']}
+              <Grid item xs={2} sm={4} md={4} key={item.title}>
+                <Paper
+                  sx={{
+                    padding: ['16px', '40px'],
+                    background: '#FFFFFF',
+                    border: '1px solid rgba(0, 61, 217, 0.1)',
+                    borderRadius: ['20px', '24px'],
+                    boxShadow: 'none',
+                  }}
                 >
-                  {item.title}
-                </Typography>
+                  {item.component}
+                  <Typography
+                    variant='h6'
+                    color='text.primary'
+                    gutterBottom
+                    fontSize={['18px', '24px']}
+                  >
+                    {item.title}
+                  </Typography>
+                </Paper>
               </Grid>
             ))}
           </Grid>
