@@ -26,12 +26,14 @@ const Main = () => {
     >
       <NavBar />
       <Container maxWidth='lg' sx={{ padding: 0 }}>
-        <Title sx={{
-          mt: ['32px', '62px'],
-          fontSize: ['40px', '56px'],
-          px: ['20px', 0]
-        }}>
-          {t("MainTitle")}
+        <Title
+          sx={{
+            mt: ['32px', '62px'],
+            fontSize: ['40px', '56px'],
+            px: ['20px', 0],
+          }}
+        >
+          {t('MainTitle')}
         </Title>
 
         <Box
@@ -40,7 +42,7 @@ const Main = () => {
             justifyContent: ['center'],
             flexDirection: ['column', 'row'],
             mt: '40px',
-            mx: ['20px', 0]
+            mx: ['20px', 0],
           }}
         >
           <Button
@@ -58,7 +60,7 @@ const Main = () => {
               '&:hover': {
                 backgroundColor: '#fff',
                 boxShadow: 'none',
-              }
+              },
             }}
           >
             {t('Start')}
@@ -80,7 +82,7 @@ const Main = () => {
                 boxShadow: 'none',
                 border: '1px solid',
                 borderImageSource: 'linear-gradient(93.11deg, #42A2FF 0%, #0B84FF 100%), linear-gradient(0deg, #003DD9, #003DD9)',
-              }
+              },
             }}
           >
             {t('Join The Community')}

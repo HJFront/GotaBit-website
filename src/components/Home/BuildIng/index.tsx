@@ -99,7 +99,7 @@ const BuildIng = () => {
                     '&:hover': {
                       backgroundColor: '#fff',
                       boxShadow: 'none',
-                    }
+                    },
                   }}
                 >
                   {t('Start')}

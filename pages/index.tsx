@@ -1,7 +1,6 @@
 import React from 'react'
 import type { NextPage } from 'next'
 import Container from '@mui/material/Container'
-import { Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import Main from 'src/components/Home/Main'
 import CoreModules from 'src/components/Home/CoreModules'

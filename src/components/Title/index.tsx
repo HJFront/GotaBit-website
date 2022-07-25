@@ -46,7 +46,7 @@ const Title = ({ type, sx, children }: PropsWithChildren<TitleProps>) => {
 }
 
 Title.defaultProps = {
-  type: 'title'
+  type: 'title',
 }
 
 export default memo(Title)

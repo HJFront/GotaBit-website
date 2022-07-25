@@ -43,13 +43,17 @@ const CoreModules = () => {
             flexDirection: ['column', 'row'],
           }}>
             {coreList.map(item => (
-              <Grid item sm={3} key={item.title}
+              <Grid
+                item
+                sm={3}
+                key={item.title}
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
                   flexDirection: ['row', 'column'],
                   justifyContent: ['flexStart', 'center'],
-                }}>
+                }}
+              >
                 {item.component}
                 <Typography
                   variant='h6'
