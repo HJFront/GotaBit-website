@@ -8,7 +8,7 @@ import Validator from './Validator'
 
 /**
  * CoreModules Module Components
- * @returns 
+ * @returns
  */
 const CoreModules = () => {
   const { t } = useTranslation('index')
@@ -30,7 +30,7 @@ const CoreModules = () => {
 
   return (
     <Box position='relative' component='div' marginBottom={['100px', '200px']}>
-      <Container maxWidth='lg'>
+      <Container maxWidth='lg' sx={{ padding: 0 }}>
         <Title>{t('Core modules')}</Title>
         <Box
           sx={{
