@@ -13,7 +13,7 @@ const Main = () => {
       component='div'
       sx={{
         width: '100%',
-        height: '924px',
+        height: ['610px', '924px'],
         margin: ['0 auto 80px', '0 auto 148px'],
         zIndex: 1,
         background: 'url("/images/MaskGroup.png") center center no-repeat',
