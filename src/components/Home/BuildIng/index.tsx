@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Container, Grid, Paper, Typography } from '@mui/material'
+import { makeStyles } from '@material-ui/styles';
 import Title from 'src/components/Title'
 import Identification from './Identification'
 import NFT from './NFT'
@@ -8,11 +9,30 @@ import GameFi from './GameFi'
 import CloudService from './CloudService'
 import SocialFi from './SocialFi'
 
+const useStyles = makeStyles({
+  buildList: {
+    transition: 'all .25s',
+    '& svg': {
+      transition: 'transform .25s',
+      transitionDelay: '.3s',
+      transitionTimingFunction: 'ease',
+      transitionDuration: '.4s',
+    },
+    '&:hover': {
+      boxShadow: '0 2px 12px 0 rgb(0 0 0 / 10%)',
+      '& svg': {
+        transform: 'scale(1.15)',
+      },
+    },
+  },
+});
+
 /**
  * BuildIng Module Components
  * @returns
  */
 const BuildIng = () => {
+  const classes = useStyles();
   const { t } = useTranslation('index')
 
   const buildList = [
@@ -56,8 +76,9 @@ const BuildIng = () => {
         >
           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {buildList.map(item => (
-              <Grid item xs={2} sm={4} md={4} key={item.title}>
+              <Grid position='relative' item xs={2} sm={4} md={4} key={item.title}>
                 <Paper
+                  className={classes.buildList}
                   sx={{
                     padding: ['16px', '40px'],
                     background: '#FFFFFF',
