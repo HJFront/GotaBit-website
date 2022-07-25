@@ -1,38 +1,20 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { Box, Container, Grid, Paper, Typography } from '@mui/material'
-import { makeStyles } from '@material-ui/styles';
+import { Box, Button, Container, Grid, Typography } from '@mui/material'
 import Title from 'src/components/Title'
+import BulidItemPaper from 'src/components/Home/BuildIng/BulidItemPaper'
 import Identification from './Identification'
 import NFT from './NFT'
 import GameFi from './GameFi'
 import CloudService from './CloudService'
 import SocialFi from './SocialFi'
 
-const useStyles = makeStyles({
-  buildList: {
-    transition: 'all .25s',
-    '& svg': {
-      transition: 'transform .25s',
-      transitionDelay: '.3s',
-      transitionTimingFunction: 'ease',
-      transitionDuration: '.4s',
-    },
-    '&:hover': {
-      boxShadow: '0 2px 12px 0 rgb(0 0 0 / 10%)',
-      '& svg': {
-        transform: 'scale(1.15)',
-      },
-    },
-  },
-});
 
 /**
  * BuildIng Module Components
  * @returns
  */
 const BuildIng = () => {
-  const classes = useStyles();
   const { t } = useTranslation('index')
 
   const buildList = [
@@ -56,10 +38,10 @@ const BuildIng = () => {
       title: t('SocialFi'),
       component: <SocialFi />,
     },
-    {
-      title: t('SocialFi1'),
-      component: <SocialFi />,
-    },
+    // {
+    //   title: t('SocialFi1'),
+    //   component: <SocialFi />,
+    // },
   ]
 
   return (
@@ -77,28 +59,53 @@ const BuildIng = () => {
           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {buildList.map(item => (
               <Grid position='relative' item xs={2} sm={4} md={4} key={item.title}>
-                <Paper
-                  className={classes.buildList}
-                  sx={{
-                    padding: ['16px', '40px'],
-                    background: '#FFFFFF',
-                    border: '1px solid rgba(0, 61, 217, 0.1)',
-                    borderRadius: ['20px', '24px'],
-                    boxShadow: 'none',
-                  }}
-                >
+                <BulidItemPaper>
                   {item.component}
                   <Typography
                     variant='h6'
                     color='text.primary'
                     gutterBottom
                     fontSize={['18px', '24px']}
+                    lineHeight='120%'
                   >
                     {item.title}
                   </Typography>
-                </Paper>
+                </BulidItemPaper>
               </Grid>
             ))}
+            <Grid position='relative' item xs={2} sm={4} md={4}>
+              <BulidItemPaper
+                sx={{
+                  background: 'linear-gradient(93.11deg, #42A2FF 0%, #0B84FF 100%), #003DD9',
+                }}
+              >
+                <Typography
+                  variant='h6'
+                  color='#fff'
+                  gutterBottom
+                  fontSize={['16px', '32px']}
+                  lineHeight={['120%', '34px']}
+                >
+                  {t('Deploy your application easily')}
+                </Typography>
+                <Button
+                  variant='contained'
+                  sx={{
+                    width: ['100%', '50%'],
+                    background: '#fff',
+                    color: '#003DD9',
+                    boxShadow: 'none',
+                    borderRadius: '100px',
+                    '&:hover': {
+                      backgroundColor: '#fff',
+                      boxShadow: 'none',
+                    }
+                  }}
+                >
+                  {t('Start')}
+                </Button>
+              </BulidItemPaper>
+            </Grid>
           </Grid>
         </Box>
       </Container>
