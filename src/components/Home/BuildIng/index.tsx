@@ -4,9 +4,9 @@ import { Box, Container, Grid, Paper, Typography } from '@mui/material'
 import Title from 'src/components/Title'
 import Identification from './Identification'
 import NFT from './NFT'
+import GameFi from './GameFi'
 import CloudService from './CloudService'
 import SocialFi from './SocialFi'
-import GameFi from './SocialFi'
 
 /**
  * BuildIng Module Components
