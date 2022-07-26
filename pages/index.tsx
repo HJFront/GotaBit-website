@@ -30,12 +30,12 @@ const Home: NextPage = () => {
           position: 'absolute',
           right: 0,
           bottom: '1020px',
-          width: '312px',
-          height: '628px',
+          width: '307px',
+          height: '760px',
           display: ['none', 'inline-block'],
         }}
       >
-        <Image src='/images/GroupRightBg.png' alt='' width={312} height={628} />
+        <Image src='/images/GroupRightBg.png' alt='' width={307} height={760} />
       </Box>
       <Main />
       <Container maxWidth='lg'>
