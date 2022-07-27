@@ -1,6 +1,6 @@
 import React from 'react'
 
-const M = () => {
+const Medium = () => {
   return (
     <svg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <circle cx='12.457' cy='12' r='12' fill='#0B1B42' />
@@ -12,4 +12,4 @@ const M = () => {
   )
 }
 
-export default M
+export default Medium

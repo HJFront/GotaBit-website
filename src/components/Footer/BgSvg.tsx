@@ -10,13 +10,13 @@ const BgSvg = () => {
         top: [0, '80px', 0],
         pointerEvents: 'none',
         width: '100%',
-        height: '600px',
-        display: ['none', 'inline-block'],
+        height: '440px',
+        display: ['none', 'node', 'inline-block'],
         overflow: 'hidden',
       }}
     >
       <svg
-        style={{ width: '108%', position: 'absolute', left: 0, bottom: '100px' }}
+        style={{ width: '104%', position: 'absolute', left: 0, bottom: '-76px' }}
         width='1280'
         height='849'
         viewBox='0 0 1280 849'

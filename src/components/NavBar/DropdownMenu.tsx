@@ -18,7 +18,6 @@ interface Props {
 }
 
 const DropdownMenu = ({ list }: Props) => {
-  console.log(list)
   return (
     <Box
       sx={{
@@ -46,25 +45,23 @@ const DropdownMenu = ({ list }: Props) => {
           {i.items.map(item => (
             <Box key={item.title}>
               <Link href={item.url}>
-                <a>
-                  <Typography
-                    component='h3'
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      fontSize: '18px',
-                      fontWeight: '500',
-                      mb: '6px',
-                      mt: '8px',
-                    }}
-                  >
-                    {item.title}
-                    <ExpandCircleDownOutlinedIcon
-                      fontSize='small'
-                      sx={{ transform: 'rotate(-90deg)', ml: '4px', fontWeight: '300' }}
-                    />
-                  </Typography>
-                </a>
+                <Typography
+                  component='h3'
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    fontSize: '18px',
+                    fontWeight: '500',
+                    mb: '6px',
+                    mt: '8px',
+                  }}
+                >
+                  {item.title}
+                  <ExpandCircleDownOutlinedIcon
+                    fontSize='small'
+                    sx={{ transform: 'rotate(-90deg)', ml: '4px', fontWeight: '300' }}
+                  />
+                </Typography>
               </Link>
               <Typography component='p' fontSize='12px'>
                 {item?.description}

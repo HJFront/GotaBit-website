@@ -1,8 +1,6 @@
-import { AppBar, Box, Divider, Drawer, Grid, IconButton, List, ListItem, ListItemButton, Toolbar } from '@mui/material'
+import { AppBar, Box, Drawer, Grid, IconButton, Toolbar } from '@mui/material'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import Tooltip, { tooltipClasses, TooltipProps } from '@mui/material/Tooltip'
 import { styled, useTheme } from '@mui/material/styles'
@@ -12,6 +10,8 @@ import Link from '../Link'
 import GradientButton from '../Buttons/GradientButton'
 import DropdownMenu, { DropdownMenuType } from './DropdownMenu'
 import DropdownContact from './DropdownContact'
+import MenuIcon from './MenuIcon'
+import DrawerContent from './DrawerContent'
 
 const drawerWidth = '100%'
 const container = typeof window !== undefined ? () => window.document.body : undefined
@@ -41,6 +41,20 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
 }))
 
+export type NavItem = {
+  key: string
+  label: string
+  dropdownMenu?: {
+    label: string
+    items: {
+      title: string
+      description?: string
+      url: string
+    }[]
+  }[]
+  path?: string
+}
+
 const NavBar = () => {
   const { t } = useTranslation('index')
   const theme = useTheme()
@@ -51,7 +65,7 @@ const NavBar = () => {
     setMobileOpen(!mobileOpen)
   }
 
-  const navItems = [
+  const navItems: NavItem[] = [
     {
       key: 'Learn',
       label: t('Learn'),
@@ -149,67 +163,6 @@ const NavBar = () => {
     },
   ]
 
-  const drawer = (
-    <Box>
-      <AppBar
-        component='nav'
-        sx={{
-          border: 'none',
-          // background: 'transparent',
-        }}
-        variant='outlined'
-        elevation={0}
-      >
-        <Toolbar
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
-        >
-          <GotaBitLogo />
-          <CloseRoundedIcon color='primary' onClick={handleDrawerToggle} />
-        </Toolbar>
-        <Divider />
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <Link
-                href=''
-                underline='none'
-                color='text.primary'
-                variant='subtitle1'
-                // sx={{
-                //   fontWeight: 700,
-                //   paddingY: '6px',
-                // }}
-              >
-                {t('Ecosystem')}
-              </Link>
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <Link
-                href=''
-                underline='none'
-                color='text.primary'
-                variant='subtitle1'
-                // sx={{
-                //   fontWeight: 700,
-                //   paddingY: '6px',
-                // }}
-              >
-                {t('Airdrop')}
-              </Link>
-            </ListItemButton>
-          </ListItem>
-        </List>
-        <Divider />
-        <LanguageSelect />
-      </AppBar>
-    </Box>
-  )
-
   return (
     <Box>
       <AppBar
@@ -227,50 +180,26 @@ const NavBar = () => {
       >
         <Toolbar
           sx={{
-            display: 'flex',
+            // width: '100%',
             justifyContent: 'space-between',
           }}
         >
           <Box
             sx={{
               width: ['132px', 'auto'],
+              mr: '8px',
             }}
           >
             <Link href='/'>
               <GotaBitLogo />
             </Link>
           </Box>
-          <Box sx={{ display: ['none', 'flex'], alignItems: 'center' }}>
-            <Grid container spacing={[0, 1, 3, 5, 7]}>
-              {navItems.map(item => (
-                <Grid item key={item.key}>
-                  {item?.path ? (
-                    <Link
-                      color='text.primary'
-                      href={item?.path ?? ''}
-                      sx={{
-                        display: 'inline-flex',
-                        fontWeight: 400,
-                        fontSize: 18,
-                        alignItems: 'center',
-                      }}
-                      underline='none'
-                    >
-                      {item.label}
-                      {item?.path ? '' : <KeyboardArrowDownIcon fontSize='small' />}
-                    </Link>
-                  ) : (
-                    <LightTooltip
-                      title={
-                        item.key === 'GetInvolved' ? (
-                          <DropdownContact />
-                        ) : (
-                          <DropdownMenu list={item.dropdownMenu as unknown as DropdownMenuType[]} />
-                        )
-                      }
-                      placement={item.key === 'Learn' ? 'bottom-start' : undefined}
-                      arrow
-                    >
+          <Box sx={{ display: ['none', 'flex'], alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
+            <Box>
+              <Grid container spacing={[0, 1, 3, 5, 6]}>
+                {navItems.map(item => (
+                  <Grid item key={item.key}>
+                    {item?.path ? (
                       <Link
                         color='text.primary'
                         href={item?.path ?? ''}
@@ -285,11 +214,38 @@ const NavBar = () => {
                         {item.label}
                         {item?.path ? '' : <KeyboardArrowDownIcon fontSize='small' />}
                       </Link>
-                    </LightTooltip>
-                  )}
-                </Grid>
-              ))}
-            </Grid>
+                    ) : (
+                      <LightTooltip
+                        title={
+                          item.key === 'GetInvolved' ? (
+                            <DropdownContact />
+                          ) : (
+                            <DropdownMenu list={item.dropdownMenu as unknown as DropdownMenuType[]} />
+                          )
+                        }
+                        placement={item.key === 'Learn' ? 'bottom-start' : undefined}
+                        arrow
+                      >
+                        <Link
+                          color='text.primary'
+                          href={item?.path ?? ''}
+                          sx={{
+                            display: 'inline-flex',
+                            fontWeight: 400,
+                            fontSize: 18,
+                            alignItems: 'center',
+                          }}
+                          underline='none'
+                        >
+                          {item.label}
+                          {item?.path ? '' : <KeyboardArrowDownIcon fontSize='small' />}
+                        </Link>
+                      </LightTooltip>
+                    )}
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
             <Box>
               <Link href=''>
                 <GradientButton
@@ -308,17 +264,24 @@ const NavBar = () => {
                 </GradientButton>
               </Link>
             </Box>
-            <LanguageSelect />
           </Box>
-          <IconButton
-            color='primary'
-            aria-label='open drawer'
-            edge='start'
-            onClick={handleDrawerToggle}
-            sx={{ display: { sm: 'none' }, paddingRight: 0 }}
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
           >
-            <MenuRoundedIcon />
-          </IconButton>
+            <LanguageSelect />
+            <IconButton
+              color='primary'
+              aria-label='open drawer'
+              edge='start'
+              onClick={handleDrawerToggle}
+              sx={{ display: ['block', 'none'], paddingRight: 0, ml: '10px' }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
         </Toolbar>
       </AppBar>
       <Box component='nav'>
@@ -332,14 +295,14 @@ const NavBar = () => {
           }}
           anchor='right'
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: ['block', 'none'],
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
             },
           }}
         >
-          {drawer}
+          <DrawerContent navItems={navItems} onClose={handleDrawerToggle} />
         </Drawer>
       </Box>
     </Box>

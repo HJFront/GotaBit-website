@@ -2,8 +2,8 @@ import Box from '@mui/material/Box'
 import React from 'react'
 import Twitter from './Twitter'
 import Github from './Github'
-import Robot from './Robot'
-import M from './M'
+import Reddit from './Reddit'
+import Medium from './Medium'
 import Facebook from './Facebook'
 import Link from '../Link'
 
@@ -18,11 +18,11 @@ const ContactIcons = () => {
       url: 'https://twitter.com',
     },
     {
-      component: <Robot />,
+      component: <Reddit />,
       url: 'https://twitter.com',
     },
     {
-      component: <M />,
+      component: <Medium />,
       url: 'https://twitter.com',
     },
     {
