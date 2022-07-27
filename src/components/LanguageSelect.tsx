@@ -37,10 +37,10 @@ const LanguageSelect = () => {
   }
 
   const languageText = useMemo(() => {
-    if (i18n?.language === 'en') return 'English'
+    if (i18n?.language === 'en') return 'EN'
     if (i18n?.language === 'zh') return 'CN'
 
-    return 'English'
+    return 'EN'
   }, [i18n?.language])
 
   // fix the react-hydration-error
@@ -51,6 +51,7 @@ const LanguageSelect = () => {
 
   const handleChange = (event: SelectChangeEvent) => {
     i18n.changeLanguage(event.target.value)
+    setPcOpen(!pcOpen)
   }
 
   if (!matches) {
@@ -96,13 +97,11 @@ const LanguageSelect = () => {
         display: 'flex',
         alignItems: 'center',
       }}
+      onClick={() => {
+        setPcOpen(!pcOpen)
+      }}
     >
-      <Box
-        onClick={() => {
-          console.log(pcOpen)
-          setPcOpen(!pcOpen)
-        }}
-      >
+      <Box>
         <EarthIcon />
       </Box>
       <Select
