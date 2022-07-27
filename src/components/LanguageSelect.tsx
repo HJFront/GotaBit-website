@@ -1,5 +1,5 @@
 import { Box, Collapse, List, ListItemButton, ListItemText, MenuItem, Select, SelectChangeEvent } from '@mui/material'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { memo, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded'
@@ -45,9 +45,9 @@ const LanguageSelect = () => {
 
   // fix the react-hydration-error
   // more details https://github.com/vercel/next.js/discussions/35773#discussioncomment-2622885
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
-  if (!mounted) return null
+  // const [mounted, setMounted] = useState(false)
+  // useEffect(() => setMounted(true), [])
+  // if (!mounted) return null
 
   const handleChange = (event: SelectChangeEvent) => {
     i18n.changeLanguage(event.target.value)
@@ -133,4 +133,4 @@ const LanguageSelect = () => {
   )
 }
 
-export default LanguageSelect
+export default memo(LanguageSelect)

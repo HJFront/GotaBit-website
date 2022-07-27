@@ -236,9 +236,11 @@ const NavBar = () => {
               width: ['132px', 'auto'],
             }}
           >
-            <GotaBitLogo />
+            <Link href='/'>
+              <GotaBitLogo />
+            </Link>
           </Box>
-          <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center' }}>
+          <Box sx={{ display: ['none', 'flex'], alignItems: 'center' }}>
             <Grid container spacing={[0, 1, 3, 5, 7]}>
               {navItems.map(item => (
                 <Grid item key={item.key}>
