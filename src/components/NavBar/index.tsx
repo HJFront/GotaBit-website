@@ -12,6 +12,7 @@ import DropdownMenu, { DropdownMenuType } from './DropdownMenu'
 import DropdownContact from './DropdownContact'
 import MenuIcon from './MenuIcon'
 import DrawerContent from './DrawerContent'
+import WhiteLogo from './WhiteLogo'
 
 const drawerWidth = '100%'
 const container = typeof window !== undefined ? () => window.document.body : undefined
@@ -35,9 +36,6 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
     width: '30px',
     height: '20px',
     marginTop: '-20px !important',
-  },
-  [`&	.${tooltipClasses.popperArrow}`]: {
-    color: 'red',
   },
 }))
 
@@ -259,7 +257,9 @@ const NavBar = () => {
                     mx: ['16px'],
                   }}
                 >
-                  <Box width='22px' height='24px' mr='8px' bgcolor='red'></Box>
+                  <Box width='18px' height='18px' mr='8px'>
+                    <WhiteLogo />
+                  </Box>
                   {t('Launch App')}
                 </GradientButton>
               </Link>

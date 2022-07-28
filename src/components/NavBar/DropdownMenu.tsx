@@ -38,6 +38,7 @@ const DropdownMenu = ({ list }: Props) => {
         >
           <Typography
             component='p'
+            color='text.secondary'
             sx={{ textTransform: 'uppercase', fontSize: '12px', fontWeight: '600', mb: '12px' }}
           >
             {i.label}
@@ -63,7 +64,7 @@ const DropdownMenu = ({ list }: Props) => {
                   />
                 </Typography>
               </Link>
-              <Typography component='p' fontSize='12px'>
+              <Typography component='p' fontSize='12px' color='text.secondary'>
                 {item?.description}
               </Typography>
             </Box>

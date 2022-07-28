@@ -13,8 +13,8 @@ const getDesignTokens: (mode: PaletteMode) => ThemeOptions = (mode: PaletteMode)
           default: '#fff',
         },
         text: {
-          primary: '#132F4C',
-          secondary: '#5D6975',
+          primary: '#0B1B42',
+          secondary: 'rgba(11, 27, 66, 0.7)',
         },
       }
       : {

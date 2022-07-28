@@ -57,6 +57,7 @@ const ContentCard = ({ item: { title, description, icon } }: Props) => {
       </Box>
       <Typography
         component='p'
+        color='text.secondary'
         sx={{
           fontSize: ['14px', '18px'],
         }}

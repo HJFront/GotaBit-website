@@ -137,7 +137,7 @@ const Footer = () => {
             <Typography variant='h6' color='text.primary' gutterBottom fontSize={['18px', '20px']} lineHeight='30px'>
               {t('Subscribe to our newsletter')}
             </Typography>
-            <Typography fontSize={['14px', '10px']} mb={['24px', '16px']}>
+            <Typography fontSize={['14px', '10px']} mb={['24px', '16px']} color='text.secondary'>
               {t('To get the latest news, articles, and resources weekly via email.')}
             </Typography>
             <Box

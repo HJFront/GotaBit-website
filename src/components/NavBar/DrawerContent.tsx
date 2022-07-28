@@ -18,6 +18,7 @@ import Github from '../ContactIcons/Github'
 import Reddit from '../ContactIcons/Reddit'
 import Medium from '../ContactIcons/Medium'
 import GradientButton from '../Buttons/GradientButton'
+import WhiteLogo from './WhiteLogo'
 
 const Accordion = styled((props: AccordionProps) => <MuiAccordion disableGutters elevation={0} square {...props} />)(
   ({ theme }) => ({
@@ -149,6 +150,7 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
                       >
                         <Typography
                           component='p'
+                          color='text.secondary'
                           sx={{ textTransform: 'uppercase', fontSize: '12px', fontWeight: 600 }}
                         >
                           {menu.label}
@@ -174,7 +176,7 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
                                 />
                               </Typography>
                             </Link>
-                            <Typography component='p' fontSize='12px'>
+                            <Typography component='p' fontSize='12px' color='text.secondary'>
                               {item?.description}
                             </Typography>
                           </Box>
@@ -225,7 +227,9 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
               borderRadius: '28px',
             }}
           >
-            <Box width='22px' height='24px' mr='8px' bgcolor='red'></Box>
+            <Box width='18px' height='18px' mr='8px'>
+              <WhiteLogo />
+            </Box>
             {t('Launch App')}
           </GradientButton>
         </Link>

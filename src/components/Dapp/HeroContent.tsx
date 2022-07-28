@@ -41,6 +41,7 @@ const HeroContent = () => {
           </Typography>
           <Typography
             component='p'
+            color='text.secondary'
             sx={{
               fontSize: ['14px', '18px'],
               lineHeight: ['20px', '28px'],
