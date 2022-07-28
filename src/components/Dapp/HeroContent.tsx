@@ -61,6 +61,7 @@ const HeroContent = () => {
           position: ['relative', 'relative', 'absolute'],
           top: 0,
           right: 0,
+          mt: ['10px', '0'],
         }}
       >
         <HeroImg />
