@@ -98,20 +98,12 @@ const Footer = () => {
       <Container maxWidth='lg'>
         <Typography
           component='h3'
-          fontWeight='600'
-          textAlign={{
-            sm: 'center',
-          }}
-          fontSize={{
-            xs: '32px',
-            sm: '56px',
-          }}
-          lineHeight={{
-            xs: 1.2,
-          }}
-          mb={{
-            xs: '24px',
-            sm: '56px',
+          sx={{
+            fontSize: ['32px', '56px'],
+            fontWeight: 600,
+            textAlign: ['left', 'center'],
+            mb: ['24px', '56px'],
+            lineHeight: ['40px', '84px'],
           }}
         >
           {t("Let's create the future together!")}

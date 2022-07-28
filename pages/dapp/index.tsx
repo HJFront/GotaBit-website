@@ -1,10 +1,10 @@
 import * as React from 'react'
 import type { NextPage } from 'next'
-import Container from '@mui/material/Container'
 import { useTranslation } from 'react-i18next'
 import Footer from 'src/components/Footer'
 import NavBar from 'src/components/NavBar'
 import HeroContent from 'src/components/Dapp/HeroContent'
+import CoreApplication from 'src/components/Dapp/CoreApplication'
 
 const Home: NextPage = () => {
   const { t } = useTranslation('common')
@@ -13,6 +13,7 @@ const Home: NextPage = () => {
     <>
       <NavBar />
       <HeroContent />
+      <CoreApplication />
       <Footer />
     </>
   )

@@ -9,7 +9,7 @@ const HeroContent = () => {
   const { t } = useTranslation('common')
 
   return (
-    <Box position='relative' mb={['100px', '150px']} mt={['24px', '60px']}>
+    <Box position='relative' mb={['100px', '170px']} mt={['24px', '60px']}>
       <Container maxWidth='lg'>
         <Box
           sx={{
