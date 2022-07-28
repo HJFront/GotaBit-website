@@ -152,7 +152,7 @@ const Footer = () => {
               sx={{
                 display: 'flex',
               }}
-              maxWidth='300px'
+              maxWidth={['none', '300px']}
             >
               <TextField
                 name='email'
@@ -178,7 +178,7 @@ const Footer = () => {
                   borderRadius: '10px',
                   borderTopLeftRadius: '0',
                   borderBottomLeftRadius: '0',
-                  px: ['32px', '18px'],
+                  px: ['40px', '32px'],
                 }}
                 disableElevation
               >
