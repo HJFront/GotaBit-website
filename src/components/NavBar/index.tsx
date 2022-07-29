@@ -302,7 +302,7 @@ const NavBar = () => {
               boxSizing: 'border-box',
               width: drawerWidth,
             },
-            backgroundColor: [theme.palette.background.default, 'transparent'],
+            backgroundColor: ['transparent'],
           }}
         >
           <DrawerContent navItems={navItems} onClose={handleDrawerToggle} />
