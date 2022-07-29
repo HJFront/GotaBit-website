@@ -3,6 +3,7 @@ import { Box, Button, Container } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import NavBar from 'src/components/NavBar'
 import Title from 'src/components/Title'
+import { prefix } from 'utils/prefix'
 
 const Main = () => {
   const { t } = useTranslation('index')
@@ -16,7 +17,7 @@ const Main = () => {
         height: ['610px', '924px'],
         margin: ['0 auto 80px', '0 auto 148px'],
         zIndex: 1,
-        background: 'url("/images/MaskGroup.png") center center no-repeat',
+        background: `url(${prefix}/images/MaskGroup.png) center center no-repeat`,
         backgroundSize: 'auto 100%',
         // background: 'url("/images/MaskGroup.png") no-repeat',
         // backgroundPosition: 'center centre',

@@ -6,6 +6,7 @@ import Main from 'src/components/Home/Main'
 import CoreModules from 'src/components/Home/CoreModules'
 import BuildIng from 'src/components/Home/BuildIng'
 import Footer from 'src/components/Footer'
+import { prefix } from 'utils/prefix'
 
 const Home: NextPage = () => {
   return (
@@ -23,7 +24,7 @@ const Home: NextPage = () => {
           display: ['none', 'inline-block'],
         }}
       >
-        <Image src='/images/GroupLeftBg.png' alt='' width={312} height={628} />
+        <Image src={`${prefix}/images/GroupLeftBg.png`} alt='' width={312} height={628} />
       </Box>
       <Box
         sx={{
@@ -35,7 +36,7 @@ const Home: NextPage = () => {
           display: ['none', 'inline-block'],
         }}
       >
-        <Image src='/images/GroupRightBg.png' alt='' width={307} height={760} />
+        <Image src={`${prefix}/images/GroupRightBg.png`} alt='' width={307} height={760} />
       </Box>
       <Main />
       <Container maxWidth='lg'>
