@@ -8,7 +8,7 @@ import SDKIcon from './Icons/SDKIcon'
 import SwapIcon from './Icons/SwapIcon'
 
 const CoreApplication = () => {
-  const { t } = useTranslation('footer')
+  const { t } = useTranslation('dapp')
 
   const items: CardItemType[] = [
     {
