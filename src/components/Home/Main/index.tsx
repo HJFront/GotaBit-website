@@ -63,6 +63,9 @@ const Main = () => {
                 boxShadow: 'none',
               },
             }}
+            onClick={() => {
+              window.open('https://docs.hjcore.io/')
+            }}
           >
             {t('Start')}
           </Button>

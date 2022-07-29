@@ -101,6 +101,9 @@ const BuildIng = () => {
                       boxShadow: 'none',
                     },
                   }}
+                  onClick={() => {
+                    window.open('https://docs.hjcore.io/')
+                  }}
                 >
                   {t('Start')}
                 </Button>
