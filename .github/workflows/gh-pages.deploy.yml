@@ -27,7 +27,7 @@ jobs:
       - name: Build project
         run: yarn build
       - name: Export static files
-        run: npm run export
+        run: yarn export
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
       - name: Deploy
