@@ -21,7 +21,8 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: theme.palette.common.white,
+    // backgroundColor: theme.palette.common.white,
+    // backgroundColor: [theme.palette.common.white, 'transparent'],
     color: 'rgba(0, 0, 0, 0.87)',
     // fontSize: 11,
     filter: 'drop-shadow(2px 2px 5px rgba(0, 0, 0, .15))',
@@ -169,9 +170,10 @@ const NavBar = () => {
         sx={{
           border: 'none',
           py: [0, '16px'],
-          backgroundColor: {
-            xs: theme.palette.background.default,
-          },
+          // backgroundColor: {
+          //   xs: theme.palette.background.default,
+          // },
+          backgroundColor: [theme.palette.background.default, 'transparent']
         }}
         variant='outlined'
         elevation={0}
@@ -300,6 +302,7 @@ const NavBar = () => {
               boxSizing: 'border-box',
               width: drawerWidth,
             },
+            backgroundColor: [theme.palette.background.default, 'transparent']
           }}
         >
           <DrawerContent navItems={navItems} onClose={handleDrawerToggle} />
