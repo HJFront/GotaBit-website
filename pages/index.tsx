@@ -1,37 +1,50 @@
-import * as React from 'react'
+import React from 'react'
+import Image from 'next/image'
 import type { NextPage } from 'next'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
-import ToggleTheme from '../src/components/ToggleTheme'
-import { useTranslation } from 'react-i18next'
-import LanguageSelect from '../src/components/LanguageSelect'
+import { Box, Container } from '@mui/material'
+import Main from 'src/components/Home/Main'
+import CoreModules from 'src/components/Home/CoreModules'
+import BuildIng from 'src/components/Home/BuildIng'
+import Footer from 'src/components/Footer'
+import { prefix } from 'utils/prefix'
 
 const Home: NextPage = () => {
-  const { t } = useTranslation('common')
-  const { t: t1 } = useTranslation('index')
-
   return (
-    <Container maxWidth="lg">
+    <Box
+      position='relative'
+      component='div'
+    >
       <Box
         sx={{
-          my: 5,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+          position: 'absolute',
+          left: 0,
+          bottom: '284px',
+          width: '312px',
+          height: '628px',
+          display: ['none', 'inline-block'],
         }}
       >
-        <Typography component="h1" color="text.primary">
-          {t('title')}
-        </Typography>
-        <ToggleTheme />
-        <LanguageSelect />
-        <Typography component="h2" color="text.secondary">
-          {t1('title')}
-        </Typography>
+        <Image src={`${prefix}/images/GroupLeftBg.png`} alt='' width={312} height={628} />
       </Box>
-    </Container>
+      <Box
+        sx={{
+          position: 'absolute',
+          right: 0,
+          bottom: '1020px',
+          width: '307px',
+          height: '760px',
+          display: ['none', 'inline-block'],
+        }}
+      >
+        <Image src={`${prefix}/images/GroupRightBg.png`} alt='' width={307} height={760} />
+      </Box>
+      <Main />
+      <Container maxWidth='lg'>
+        <CoreModules />
+        <BuildIng />
+      </Container>
+      <Footer />
+    </Box>
   )
 }
 
