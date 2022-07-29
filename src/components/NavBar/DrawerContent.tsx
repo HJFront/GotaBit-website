@@ -105,7 +105,12 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
             fontSize: '26px',
           }}
         >
-          <Box width='134px'>
+          <Box
+            sx={{
+              width: '134px',
+              mt: ['14px'],
+            }}
+          >
             <GotaBitLogo />
           </Box>
           <CloseRoundedIcon color='inherit' fontSize='inherit' onClick={onClose} />
