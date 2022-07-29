@@ -112,6 +112,20 @@ const BuildIng = () => {
           </Grid>
         </Box>
       </Container>
+
+      <Box
+        sx={{
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          width: '100%',
+          height: '120%',
+          background: '#003DD9',
+          opacity: '0.1',
+          filter: 'blur(280px)',
+          zIndex: -1,
+        }}
+      ></Box>
     </Box>
   )
 }
