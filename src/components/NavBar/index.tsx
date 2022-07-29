@@ -55,7 +55,7 @@ export type NavItem = {
 }
 
 const NavBar = () => {
-  const { t } = useTranslation('index')
+  const { t } = useTranslation('nav')
   const theme = useTheme()
 
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -87,7 +87,7 @@ const NavBar = () => {
           label: t('Token'),
           items: [
             {
-              title: t('What is GotaBit?'),
+              title: t('What is GTB?'),
               description: t('Understand the token economics of GTB.'),
               url: '/',
             },

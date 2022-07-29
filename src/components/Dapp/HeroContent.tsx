@@ -6,7 +6,7 @@ import GradientButton from '../Buttons/GradientButton'
 import HeroImg from './HeroImg'
 
 const HeroContent = () => {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('dapp')
 
   return (
     <Box position='relative' mb={['100px', '170px']} mt={['24px', '60px']}>
