@@ -7,9 +7,9 @@ const useStyles = makeStyles({
     transition: 'all .25s',
     '& svg': {
       transition: 'transform .25s',
-      transitionDelay: '.3s',
+      transitionDelay: '.1s',
       transitionTimingFunction: 'ease',
-      transitionDuration: '.4s',
+      transitionDuration: '.3s',
     },
     '&:hover': {
       boxShadow: '0 2px 12px 0 rgb(0 0 0 / 10%)',
@@ -21,10 +21,10 @@ const useStyles = makeStyles({
 })
 
 /**
- * BulidItemPaper Components
+ * CardItm Components
  * @returns
  */
-const BulidItemPaper = ({ sx, children }: PropsWithChildren<PaperProps>) => {
+const CardItm = ({ sx, children }: PropsWithChildren<PaperProps>) => {
   const classes = useStyles()
 
   return (
@@ -50,4 +50,4 @@ const BulidItemPaper = ({ sx, children }: PropsWithChildren<PaperProps>) => {
   )
 }
 
-export default memo(BulidItemPaper)
+export default memo(CardItm)

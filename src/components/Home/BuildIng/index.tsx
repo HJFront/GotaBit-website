@@ -2,13 +2,12 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Button, Container, Grid, Typography } from '@mui/material'
 import Title from 'src/components/Title'
-import BulidItemPaper from 'src/components/Home/BuildIng/BulidItemPaper'
+import CardItm from 'src/components/Home/CardItm'
 import Identification from './Identification'
 import NFT from './NFT'
 import GameFi from './GameFi'
 import CloudService from './CloudService'
 import SocialFi from './SocialFi'
-
 
 /**
  * BuildIng Module Components
@@ -59,7 +58,7 @@ const BuildIng = () => {
           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {buildList.map(item => (
               <Grid position='relative' item xs={2} sm={4} md={4} key={item.title}>
-                <BulidItemPaper>
+                <CardItm>
                   {item.component}
                   <Typography
                     variant='h6'
@@ -70,11 +69,11 @@ const BuildIng = () => {
                   >
                     {item.title}
                   </Typography>
-                </BulidItemPaper>
+                </CardItm>
               </Grid>
             ))}
             <Grid position='relative' item xs={2} sm={4} md={4}>
-              <BulidItemPaper
+              <CardItm
                 sx={{
                   background: 'linear-gradient(93.11deg, #42A2FF 0%, #0B84FF 100%), #003DD9',
                 }}
@@ -107,7 +106,7 @@ const BuildIng = () => {
                 >
                   {t('Start')}
                 </Button>
-              </BulidItemPaper>
+              </CardItm>
             </Grid>
           </Grid>
         </Box>
