@@ -51,6 +51,12 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems: NavItem[] }) => {
   const { t } = useTranslation('index')
+  const [expanded, setExpanded] = React.useState<string | false>(false)
+
+  const handleChange = (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+    setExpanded(newExpanded ? panel : false)
+  }
+
   const contacts = [
     {
       icon: <Twitter />,
@@ -135,7 +141,7 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
                   </Link>
                 </AccordionSummary>
               ) : (
-                <Accordion>
+                <Accordion expanded={expanded === navItem.key} onChange={handleChange(navItem.key)}>
                   <AccordionSummary expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '12px' }} />}>
                     <Typography component='h2' sx={{ fontSize: '20px', fontWeight: 600 }}>
                       {navItem.label}

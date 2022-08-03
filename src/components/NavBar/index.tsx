@@ -172,6 +172,7 @@ const NavBar = () => {
             // width: '100%',
             justifyContent: 'space-between',
           }}
+          disableGutters
         >
           <Box
             sx={{
