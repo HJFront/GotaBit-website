@@ -124,7 +124,16 @@ const Footer = () => {
                 <ul>
                   {footer.descriptions.map((item, index) => (
                     <li key={index}>
-                      <Link href={item.path} variant='subtitle1' color='text.secondary' fontSize={['14px', '16px']}>
+                      <Link
+                        href={item.path}
+                        variant='subtitle1'
+                        color='text.secondary'
+                        fontSize={['14px', '16px']}
+                        sx={{
+                          display: 'inline-block',
+                          my: '4px',
+                        }}
+                      >
                         {item.text}
                       </Link>
                     </li>

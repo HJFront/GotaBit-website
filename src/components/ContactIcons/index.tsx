@@ -38,6 +38,9 @@ const ContactIcons = () => {
           href={icon.url}
           sx={{
             ml: '16px',
+            '&:first-child': {
+              ml: 0,
+            },
           }}
         >
           {icon.component}
