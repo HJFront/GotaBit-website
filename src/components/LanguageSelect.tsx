@@ -54,7 +54,7 @@ const LanguageSelect = () => {
     handleTooltipClose()
   }
 
-  const PopUp = open && (
+  const PopUp = (
     <Box py={['10px']}>
       {supportLanguages.map(lan => (
         <MenuItem
