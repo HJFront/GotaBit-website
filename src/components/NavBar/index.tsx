@@ -17,7 +17,7 @@ import WhiteLogo from './WhiteLogo'
 const drawerWidth = '100%'
 const container = typeof window !== undefined ? () => window.document.body : undefined
 
-const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+export const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
@@ -184,7 +184,7 @@ const NavBar = () => {
               <GotaBitLogo />
             </Link>
           </Box>
-          <Box sx={{ display: ['none', 'flex'], alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
+          <Box sx={{ display: ['none', 'none', 'flex'], alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
             <Box>
               <Grid container spacing={[0, 1, 3, 5, 6]}>
                 {navItems.map(item => (
@@ -268,7 +268,7 @@ const NavBar = () => {
               aria-label='open drawer'
               edge='start'
               onClick={handleDrawerToggle}
-              sx={{ display: ['block', 'none'], paddingRight: 0, ml: '10px' }}
+              sx={{ display: ['block', 'block', 'none'], paddingRight: 0, ml: '10px' }}
             >
               <MenuIcon />
             </IconButton>
@@ -286,7 +286,7 @@ const NavBar = () => {
           }}
           anchor='right'
           sx={{
-            display: ['block', 'none'],
+            display: ['block', 'block', 'none'],
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,

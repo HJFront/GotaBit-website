@@ -4,15 +4,16 @@ import Footer from 'src/components/Footer'
 import NavBar from 'src/components/NavBar'
 import HeroContent from 'src/components/Dapp/HeroContent'
 import CoreApplication from 'src/components/Dapp/CoreApplication'
+import { Container } from '@mui/system'
 
 const Home: NextPage = () => {
   return (
-    <>
+    <Container maxWidth='lg'>
       <NavBar />
       <HeroContent />
       <CoreApplication />
       <Footer />
-    </>
+    </Container>
   )
 }
 

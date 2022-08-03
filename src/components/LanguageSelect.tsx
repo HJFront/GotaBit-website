@@ -1,6 +1,7 @@
-import { Box, MenuItem, Select, SelectChangeEvent } from '@mui/material'
-import React, { memo, useMemo, useState } from 'react'
+import { Box, ClickAwayListener, MenuItem, Typography } from '@mui/material'
+import React, { memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { LightTooltip } from './NavBar'
 
 const EarthIcon = () => (
   <svg
@@ -21,11 +22,11 @@ const EarthIcon = () => (
 const supportLanguages = [
   {
     key: 'en',
-    value: 'EN',
+    label: 'English',
   },
   {
     key: 'zh',
-    value: 'CN',
+    label: '简体中文',
   },
 ]
 
@@ -40,55 +41,85 @@ const LanguageSelect = () => {
   // useEffect(() => setMounted(true), [])
   // if (!mounted) return null
 
-  const handleChange = (event: SelectChangeEvent) => {
-    i18n.changeLanguage(event.target.value)
-    setOpen(!open)
+  const handleTooltipClose = () => {
+    setOpen(false)
   }
 
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-      }}
-      onClick={() => {
-        setOpen(!open)
-      }}
-    >
-      <Box
-        sx={{
-          width: ['18px', 'auto'],
-          mt: ['4px', '0'],
-        }}
-      >
-        <EarthIcon />
-      </Box>
-      <Select
-        value={i18n?.language || 'en'}
-        label='Language'
-        onChange={handleChange}
-        open={open}
-        sx={{
-          fontSize: '12px',
-          '& .MuiSelect-outlined': {
-            padding: '0 !important',
-            marginLeft: '6px',
-          },
-          '& fieldset': {
-            border: 'none',
-          },
-          '& .MuiSelect-icon': {
-            display: 'none',
-          },
-        }}
-      >
-        {supportLanguages.map(lan => (
-          <MenuItem value={lan.key} key={lan.key}>
-            {lan.value}
-          </MenuItem>
-        ))}
-      </Select>
+  const handleTooltipOpen = () => {
+    setOpen(true)
+  }
+
+  const handleLanguageChange = (lan: string) => {
+    i18n.changeLanguage(lan)
+    handleTooltipClose()
+  }
+
+  const PopUp = open && (
+    <Box py={['10px']}>
+      {supportLanguages.map(lan => (
+        <MenuItem
+          value={lan.key}
+          key={lan.key}
+          onClick={e => {
+            e.stopPropagation()
+            handleLanguageChange(lan.key)
+          }}
+          sx={{
+            fontSize: ['12px', '16px'],
+            fontWeight: 600,
+            color: i18n?.language == lan.key ? 'text.info' : 'text.primary',
+          }}
+        >
+          {lan.label}
+        </MenuItem>
+      ))}
     </Box>
+  )
+
+  return (
+    <ClickAwayListener onClickAway={handleTooltipClose}>
+      <div>
+        <Box
+          component='div'
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+          onClick={handleTooltipOpen}
+        >
+          <Box
+            sx={{
+              width: ['18px', 'auto'],
+              fontSize: 0,
+            }}
+          >
+            <EarthIcon />
+          </Box>
+
+          <LightTooltip
+            title={PopUp}
+            arrow
+            onClose={handleTooltipClose}
+            open={open}
+            disableFocusListener
+            disableHoverListener
+            disableTouchListener
+          >
+            <Typography
+              component='p'
+              color='primary'
+              sx={{
+                fontSize: ['12px', '16px'],
+                fontWeight: 600,
+                marginLeft: '6px',
+              }}
+            >
+              {i18n?.language == 'en' ? supportLanguages[0].label : supportLanguages[1].label}
+            </Typography>
+          </LightTooltip>
+        </Box>
+      </div>
+    </ClickAwayListener>
   )
 }
 

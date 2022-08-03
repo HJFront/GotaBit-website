@@ -7,17 +7,17 @@ const BgSvg = () => {
       sx={{
         position: 'absolute',
         left: 0,
-        top: [0, 0, '86px'],
+        bottom: [0, 0, 0],
         pointerEvents: 'none',
         width: '100%',
-        height: '430px',
-        display: ['none', 'node', 'inline-block'],
+        height: '100%',
+        display: ['none', 'none', 'inline-block'],
         overflowX: 'clip',
         fontSize: 0,
       }}
     >
       <svg
-        style={{ width: '100%' }}
+        style={{ position: 'absolute', left: 0, bottom: 0 }}
         width='1280'
         height='430'
         viewBox='0 0 1280 430'
