@@ -25,7 +25,9 @@ const Main = () => {
         // backgroundSize: 'cover'
       }}
     >
-      <NavBar />
+      <Container maxWidth='lg'>
+        <NavBar />
+      </Container>
       <Container maxWidth='lg' sx={{ padding: 0 }}>
         <Title
           sx={{

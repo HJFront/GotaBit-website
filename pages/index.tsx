@@ -42,8 +42,8 @@ const Home: NextPage = () => {
       <Container maxWidth='lg'>
         <CoreModules />
         <BuildIng />
+        <Footer />
       </Container>
-      <Footer />
     </Box>
   )
 }
