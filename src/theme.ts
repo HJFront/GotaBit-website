@@ -44,6 +44,15 @@ const getDesignTokens: (mode: PaletteMode) => ThemeOptions = (mode: PaletteMode)
     },
   },
 
+  typography: {
+    fontFamily: [
+      'Poppins',
+      '-apple-system',
+      'Arial',
+      'sans-serif',
+    ].join(','),
+  },
+
   components: {
     MuiButton: {
       styleOverrides: {
