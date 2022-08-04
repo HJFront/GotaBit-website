@@ -90,7 +90,7 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        minHeight: '100vh',
+        minHeight: '100%',
       }}
     >
       <AppBar
@@ -113,8 +113,8 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
         >
           <Box
             sx={{
-              width: '134px',
-              mt: ['14px'],
+              width: '132px',
+              mt: ['10px'],
             }}
           >
             <GotaBitLogo />
@@ -227,7 +227,7 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
         </Box>
       </AppBar>
       <Box px='20px' pb='24px'>
-        <Link href=''>
+        <Link href='' sx={{ width: '100%' }}>
           <GradientButton
             sx={{
               display: 'flex',

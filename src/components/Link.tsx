@@ -9,6 +9,8 @@ import { styled } from '@mui/material/styles'
 const Anchor = styled('a')({
   color: 'inherit',
   textDecoration: 'none !important',
+  display: 'inline-block',
+  height: '100%',
 })
 
 interface NextLinkComposedProps
