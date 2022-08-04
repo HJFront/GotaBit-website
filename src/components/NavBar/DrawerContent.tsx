@@ -143,9 +143,11 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
               ) : (
                 <Accordion expanded={expanded === navItem.key} onChange={handleChange(navItem.key)}>
                   <AccordionSummary expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '12px' }} />}>
-                    <Typography component='h2' sx={{ fontSize: '20px', fontWeight: 600 }}>
-                      {navItem.label}
-                    </Typography>
+                    <Link href=''>
+                      <Typography component='h2' sx={{ fontSize: '20px', fontWeight: 600 }}>
+                        {navItem.label}
+                      </Typography>
+                    </Link>
                   </AccordionSummary>
                   <AccordionDetails>
                     {navItem?.dropdownMenu?.map((menu, index) => (
@@ -197,7 +199,16 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
                     {navItem.key === 'GetInvolved' && (
                       <Box pl='20px'>
                         {contacts.map(item => (
-                          <Link underline='none' href={item.url} key={item.label}>
+                          <Link
+                            underline='none'
+                            href={item.url}
+                            key={item.label}
+                            sx={{
+                              '&:hover': {
+                                color: 'text.info',
+                              },
+                            }}
+                          >
                             <Box
                               key={item.label}
                               sx={{
