@@ -2,6 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Container, Grid, Typography } from '@mui/material'
 import Title from 'src/components/Title'
+import CardItm from 'src/components/Home/CardItm'
 import GotaBitscan from './GotaBitscan'
 import GotaBitWallet from './GotaBitWallet'
 import Validator from './Validator'
@@ -38,32 +39,44 @@ const CoreModules = () => {
             flexDirection: ['column', 'column', 'row'],
           }}
         >
-          <Grid flex='1' container spacing={4} justifyContent='space-evenly' sx={{
-            display: 'flex',
-            flexDirection: ['column', 'row'],
-          }}>
+          <Grid
+            container
+            spacing={3}
+            sx={{
+              display: 'flex',
+              flexDirection: ['column', 'row'],
+              justifyContent: 'space-evenly',
+            }}
+          >
             {coreList.map(item => (
               <Grid
+                position='relative'
+                flex='1'
                 item
-                sm={3}
                 key={item.title}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  flexDirection: ['row', 'column'],
-                  justifyContent: ['flexStart', 'center'],
-                }}
               >
-                {item.component}
-                <Typography
-                  variant='h6'
-                  color='text.primary'
-                  gutterBottom fontSize={['18px', '24px']}
-                  marginTop={[0, '42px']}
-                  marginLeft={['16px', '0']}
+                <CardItm
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    flexDirection: ['row', 'column'],
+                    justifyContent: ['flexStart', 'center'],
+                    height: ['140px', '300px'],
+                    padding: ['0 20px', '0'],
+                  }}
                 >
-                  {item.title}
-                </Typography>
+                  {item.component}
+                  <Typography
+                    variant='h6'
+                    color='text.primary'
+                    gutterBottom
+                    fontSize={['18px', '24px']}
+                    marginTop={[0, '42px']}
+                    marginLeft={['16px', '0']}
+                  >
+                    {item.title}
+                  </Typography>
+                </CardItm>
               </Grid>
             ))}
           </Grid>

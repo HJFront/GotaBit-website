@@ -45,8 +45,7 @@ const CoreApplication = () => {
 
   return (
     <Box mb={['100px', '140px']} position='relative'>
-      <Container
-        maxWidth='lg'
+      <Box
         sx={{
           position: 'relative',
           zIndex: 2,
@@ -74,7 +73,7 @@ const CoreApplication = () => {
             <ContentCard item={item} key={item.key} />
           ))}
         </Box>
-      </Container>
+      </Box>
       <Box
         sx={{
           position: 'absolute',

@@ -19,7 +19,6 @@ const ContentCard = ({ item: { title, description, icon } }: Props) => {
       sx={{
         px: ['30px', '40px'],
         py: ['24px', '40px'],
-        maxWidth: ['520px'],
         mb: ['10px', '30px'],
         border: '1px solid rgba(0, 61, 217, 0.1)',
         borderRadius: '24px',

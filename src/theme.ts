@@ -15,6 +15,7 @@ const getDesignTokens: (mode: PaletteMode) => ThemeOptions = (mode: PaletteMode)
         text: {
           primary: '#0B1B42',
           secondary: 'rgba(11, 27, 66, 0.7)',
+          info: '#198BFE'
         },
       }
       : {
@@ -33,6 +34,25 @@ const getDesignTokens: (mode: PaletteMode) => ThemeOptions = (mode: PaletteMode)
         },
       }),
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 980,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
+
+  typography: {
+    fontFamily: [
+      'Poppins',
+      '-apple-system',
+      'Arial',
+      'sans-serif',
+    ].join(','),
+  },
+
   components: {
     MuiButton: {
       styleOverrides: {

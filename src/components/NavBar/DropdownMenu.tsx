@@ -4,14 +4,13 @@ import React from 'react'
 import Link from '../Link'
 
 export type DropdownMenuType = {
+  key?: string
   label: string
-  items: [
-    {
-      title: string
-      description?: string
-      url: string
-    }
-  ]
+  items: {
+    title: string
+    description?: string
+    url: string
+  }[]
 }
 interface Props {
   list?: DropdownMenuType[]
@@ -26,9 +25,10 @@ const DropdownMenu = ({ list }: Props) => {
     >
       {list?.map(i => (
         <Box
-          p='24px'
+          p='36px'
           key={i.label}
-          maxWidth='260px'
+          maxWidth={i?.key === 'Introduction' ? '360px' : i?.key === 'Token' ? '240px' : '300px'}
+          minWidth={i?.key === 'Token' ? '240px' : '260px'}
           sx={{
             borderRight: '1px solid rgba(0, 0, 0, 0.1)',
             '&:last-child': {
@@ -44,7 +44,7 @@ const DropdownMenu = ({ list }: Props) => {
             {i.label}
           </Typography>
           {i.items.map(item => (
-            <Box key={item.title}>
+            <Box key={item.title} marginLeft='12px'>
               <Link href={item.url}>
                 <Typography
                   component='h3'

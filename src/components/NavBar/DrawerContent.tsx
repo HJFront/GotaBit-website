@@ -51,6 +51,12 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems: NavItem[] }) => {
   const { t } = useTranslation('index')
+  const [expanded, setExpanded] = React.useState<string | false>(false)
+
+  const handleChange = (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+    setExpanded(newExpanded ? panel : false)
+  }
+
   const contacts = [
     {
       icon: <Twitter />,
@@ -84,7 +90,7 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        minHeight: '100vh',
+        minHeight: '100%',
       }}
     >
       <AppBar
@@ -107,8 +113,8 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
         >
           <Box
             sx={{
-              width: '134px',
-              mt: ['14px'],
+              width: '132px',
+              mt: ['10px'],
             }}
           >
             <GotaBitLogo />
@@ -135,7 +141,7 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
                   </Link>
                 </AccordionSummary>
               ) : (
-                <Accordion>
+                <Accordion expanded={expanded === navItem.key} onChange={handleChange(navItem.key)}>
                   <AccordionSummary expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '12px' }} />}>
                     <Typography component='h2' sx={{ fontSize: '20px', fontWeight: 600 }}>
                       {navItem.label}
@@ -221,7 +227,7 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
         </Box>
       </AppBar>
       <Box px='20px' pb='24px'>
-        <Link href=''>
+        <Link href='' sx={{ width: '100%' }}>
           <GradientButton
             sx={{
               display: 'flex',
