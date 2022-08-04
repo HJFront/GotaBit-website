@@ -199,6 +199,9 @@ const NavBar = () => {
                           fontWeight: 600,
                           fontSize: 18,
                           alignItems: 'center',
+                          '&:hover': {
+                            color: 'text.info',
+                          },
                         }}
                         underline='none'
                       >
@@ -224,6 +227,9 @@ const NavBar = () => {
                             fontWeight: 600,
                             fontSize: 18,
                             alignItems: 'center',
+                            '&:hover': {
+                              color: 'text.info',
+                            },
                           }}
                           underline='none'
                         >
@@ -269,7 +275,7 @@ const NavBar = () => {
               aria-label='open drawer'
               edge='start'
               onClick={handleDrawerToggle}
-              sx={{ display: ['block', 'block', 'none'], paddingRight: 0, ml: '10px' }}
+              sx={{ display: ['block', 'block', 'none'], mr: '-8px', ml: '10px' }}
             >
               <MenuIcon />
             </IconButton>

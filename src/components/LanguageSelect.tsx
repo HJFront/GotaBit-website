@@ -1,5 +1,6 @@
 import { Box, ClickAwayListener, MenuItem, Typography } from '@mui/material'
 import React, { memo, useState } from 'react'
+import { isMobile } from 'react-device-detect'
 import { useTranslation } from 'react-i18next'
 import { LightTooltip } from './NavBar'
 
@@ -68,6 +69,9 @@ const LanguageSelect = () => {
             fontSize: ['12px', '16px'],
             fontWeight: 600,
             color: i18n?.language == lan.key ? 'text.info' : 'text.primary',
+            '&:hover': {
+              color: 'text.info',
+            },
           }}
         >
           {lan.label}
@@ -84,6 +88,7 @@ const LanguageSelect = () => {
           sx={{
             display: 'flex',
             alignItems: 'center',
+            cursor: 'pointer',
           }}
           onClick={handleTooltipOpen}
         >
@@ -100,10 +105,10 @@ const LanguageSelect = () => {
             title={PopUp}
             arrow
             onClose={handleTooltipClose}
-            open={open}
-            disableFocusListener
-            disableHoverListener
-            disableTouchListener
+            open={isMobile ? open : undefined}
+            disableFocusListener={isMobile ? true : undefined}
+            disableHoverListener={isMobile ? true : undefined}
+            disableTouchListener={isMobile ? true : undefined}
           >
             <Typography
               component='p'
@@ -112,6 +117,9 @@ const LanguageSelect = () => {
                 fontSize: ['12px', '16px'],
                 fontWeight: 600,
                 marginLeft: '6px',
+                '&:hover': {
+                  color: 'text.info',
+                },
               }}
             >
               {i18n?.language == 'en' ? supportLanguages[0].label : supportLanguages[1].label}
