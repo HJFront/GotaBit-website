@@ -35,7 +35,7 @@ const Footer = () => {
           path: '/',
         },
         {
-          text: 'Validators',
+          text: t('Executors'),
           path: '/',
         },
         {

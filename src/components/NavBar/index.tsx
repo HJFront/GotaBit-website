@@ -199,9 +199,6 @@ const NavBar = () => {
                           fontWeight: 600,
                           fontSize: 18,
                           alignItems: 'center',
-                          '&:hover': {
-                            color: 'text.info',
-                          },
                         }}
                         underline='none'
                       >
@@ -227,9 +224,6 @@ const NavBar = () => {
                             fontWeight: 600,
                             fontSize: 18,
                             alignItems: 'center',
-                            '&:hover': {
-                              color: 'text.info',
-                            },
                           }}
                           underline='none'
                         >
