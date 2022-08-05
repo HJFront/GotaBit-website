@@ -109,7 +109,7 @@ const Landing: NextPage = () => {
               width: '100%',
             }}
           >
-            <CopyrightAndContact color='rgba(255,255,255,0.5)' />
+            <CopyrightAndContact isGrey />
           </Box>
         </Container>
       </LandingBgProvider>

@@ -3,7 +3,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import ContactIcons from '../ContactIcons'
 
-const CopyrightAndContact = ({ color }: { color?: string }) => {
+const CopyrightAndContact = ({ isGrey }: { isGrey?: boolean }) => {
   const { t } = useTranslation('footer')
 
   return (
@@ -20,14 +20,14 @@ const CopyrightAndContact = ({ color }: { color?: string }) => {
       <Typography
         mt={['20px', '20px', 0]}
         sx={{
-          color: color ?? '',
+          color: isGrey ? 'rgba(255,255,255,0.5)' : '',
           fontSize: ['10px', '14px'],
         }}
       >
         {t('Copyright')}
       </Typography>
       <Box>
-        <ContactIcons isGrey={color ? true : false} />
+        <ContactIcons isGrey={isGrey} />
       </Box>
     </Box>
   )
