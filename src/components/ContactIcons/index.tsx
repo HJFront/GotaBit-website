@@ -7,26 +7,26 @@ import Medium from './Medium'
 import Facebook from './Facebook'
 import Link from '../Link'
 
-const ContactIcons = () => {
+const ContactIcons = ({ isGrey }: { isGrey?: boolean }) => {
   const icons = [
     {
-      component: <Twitter />,
+      component: <Twitter isGrey={isGrey} />,
       url: 'https://twitter.com',
     },
     {
-      component: <Github />,
+      component: <Github isGrey={isGrey} />,
       url: 'https://twitter.com',
     },
     {
-      component: <Reddit />,
+      component: <Reddit isGrey={isGrey} />,
       url: 'https://twitter.com',
     },
     {
-      component: <Medium />,
+      component: <Medium isGrey={isGrey} />,
       url: 'https://twitter.com',
     },
     {
-      component: <Facebook />,
+      component: <Facebook isGrey={isGrey} />,
       url: 'https://twitter.com',
     },
   ]
