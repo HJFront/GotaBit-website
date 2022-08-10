@@ -20,22 +20,27 @@ const BuildIng = () => {
     {
       title: t('Identification'),
       component: <Identification />,
+      description: t('Decentralized Authentication System'),
     },
     {
       title: t('NFT'),
       component: <NFT />,
+      description: t('Asset confirmation'),
     },
     {
       title: t('GameFi'),
       component: <GameFi />,
+      description: t('Play to earn'),
     },
     {
       title: t('Cloud Service'),
       component: <CloudService />,
+      description: t('Efficient development DAPP'),
     },
     {
       title: t('SocialFi'),
       component: <SocialFi />,
+      description: t('Valued social networks'),
     },
     // {
     //   title: t('SocialFi1'),
@@ -45,7 +50,7 @@ const BuildIng = () => {
 
   return (
     <Box position='relative' component='div' marginBottom={['100px', '200px']}>
-      <Container maxWidth='lg' sx={{ padding: 0 }}>
+      <Box>
         <Title sx={{ mb: ['8px', '12px'] }}>{t('Build with us')}</Title>
         <Title type='subTitle' sx={{ mb: ['24px', '56px'] }}>
           {t('Build with us Subtitle')}
@@ -61,7 +66,14 @@ const BuildIng = () => {
             {buildList.map(item => (
               <Grid position='relative' item xs={4} sm={4} md={4} key={item.title}>
                 <CardItm>
-                  {item.component}
+                  <Box
+                    sx={{
+                      width: '70px',
+                      height: '70px',
+                    }}
+                  >
+                    {item.component}
+                  </Box>
                   <Box sx={{ ml: ['20px', '26px'] }}>
                     <Typography
                       variant='h6'
@@ -71,6 +83,9 @@ const BuildIng = () => {
                       lineHeight='120%'
                     >
                       {item.title}
+                    </Typography>
+                    <Typography variant='body1' color='#525D79' fontSize={['14px']} lineHeight='20px'>
+                      {item.description}
                     </Typography>
                   </Box>
                 </CardItm>
@@ -118,7 +133,7 @@ const BuildIng = () => {
             </Grid>
           </Grid>
         </Box>
-      </Container>
+      </Box>
 
       <Box
         sx={{
