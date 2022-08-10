@@ -47,7 +47,9 @@ const BuildIng = () => {
     <Box position='relative' component='div' marginBottom={['100px', '200px']}>
       <Container maxWidth='lg' sx={{ padding: 0 }}>
         <Title sx={{ mb: ['8px', '12px'] }}>{t('Build with us')}</Title>
-        <Title type='subTitle' sx={{ mb: ['24px', '56px'] }}>{t('Build with us Subtitle')}</Title>
+        <Title type='subTitle' sx={{ mb: ['24px', '56px'] }}>
+          {t('Build with us Subtitle')}
+        </Title>
         <Box
           sx={{
             flexGrow: 1,
@@ -55,24 +57,26 @@ const BuildIng = () => {
             flexDirection: ['column', 'column', 'row'],
           }}
         >
-          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 4, md: 12 }}>
             {buildList.map(item => (
-              <Grid position='relative' item xs={2} sm={4} md={4} key={item.title}>
+              <Grid position='relative' item xs={4} sm={4} md={4} key={item.title}>
                 <CardItm>
                   {item.component}
-                  <Typography
-                    variant='h6'
-                    color='text.primary'
-                    gutterBottom
-                    fontSize={['18px', '24px']}
-                    lineHeight='120%'
-                  >
-                    {item.title}
-                  </Typography>
+                  <Box sx={{ ml: ['20px', '26px'] }}>
+                    <Typography
+                      variant='h6'
+                      color='text.primary'
+                      gutterBottom
+                      fontSize={['18px', '24px']}
+                      lineHeight='120%'
+                    >
+                      {item.title}
+                    </Typography>
+                  </Box>
                 </CardItm>
               </Grid>
             ))}
-            <Grid position='relative' item xs={2} sm={4} md={4}>
+            <Grid position='relative' item xs={4} sm={4} md={4}>
               <CardItm
                 sx={{
                   background: 'linear-gradient(93.11deg, #42A2FF 0%, #0B84FF 100%), #003DD9',
@@ -82,22 +86,26 @@ const BuildIng = () => {
                   variant='h6'
                   color='#fff'
                   gutterBottom
-                  fontSize={['16px', '32px']}
-                  lineHeight={['120%', '34px']}
+                  fontSize={['24px']}
+                  sx={{
+                    height: '70px',
+                    mb: 0,
+                    lineHeight: 1,
+                  }}
                 >
                   {t('Deploy your application easily')}
                 </Typography>
                 <Button
                   variant='contained'
                   sx={{
-                    width: ['100%', '50%'],
+                    width: ['120px', '130px'],
                     background: '#fff',
                     color: '#003DD9',
                     boxShadow: 'none',
                     borderRadius: '100px',
+                    ml: [0, '20px', 0],
                     '&:hover': {
-                      backgroundColor: '#fff',
-                      boxShadow: 'none',
+                      backgroundColor: 'rgba(255, 255, 255, 0.95)',
                     },
                   }}
                   onClick={() => {
