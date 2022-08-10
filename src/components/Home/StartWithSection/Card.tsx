@@ -16,8 +16,13 @@ const Card = ({ icon, label }: { icon: React.ReactNode; label: string }) => {
         flex: 1,
         ml: [0, 0, '26px'],
         mb: ['26px', '26px', 0],
-        '&: first-child': {
+        '&: first-of-type': {
           ml: 0,
+        },
+        '&: hover': {
+          transform: 'scale(1.02)',
+          transition: 'transform 0.1s ease 0s',
+          boxShadow: '5px 5px 20px -15px rgba(255, 255, 255, 1)',
         },
       }}
     >
