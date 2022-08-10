@@ -34,7 +34,7 @@ const Main = () => {
       sx={{
         width: '100%',
         // height: ['610px', '924px'],
-        margin: ['0 auto 80px', '0 auto 148px'],
+        margin: ['0 auto 50px', '0 auto 100px'],
         zIndex: 1,
       }}
     >
