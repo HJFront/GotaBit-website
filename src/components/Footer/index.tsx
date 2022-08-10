@@ -141,18 +141,22 @@ const Footer = () => {
             </Grid>
           ))}
         </Grid>
-        <Box pt={['32px', '0']} mb='20px'>
+        <Box pt={['32px', '4px']} mb='20px'>
           <Typography variant='h6' color='text.primary' gutterBottom fontSize={['18px', '20px']} lineHeight='30px'>
             {t('Subscribe to our newsletter')}
           </Typography>
-          <Typography fontSize={['14px', '10px']} mb={['24px', '16px']} color='text.secondary'>
+          <Typography fontSize={['14px', '10px']} mb={['24px', '14px']} color='text.secondary'>
             {t('To get the latest news, articles, and resources weekly via email.')}
           </Typography>
           <Box
             sx={{
               display: 'flex',
+              boxShadow: '0px 8px 60px -10px rgba(0, 0, 0, 0.15)',
+              borderRadius: '10px',
+              border: '1px solid #E6ECFB',
             }}
-            maxWidth={['none', '300px']}
+            minWidth={['none', '330px']}
+            maxWidth={['none', '400px']}
           >
             <TextField
               name='email'
@@ -161,7 +165,6 @@ const Footer = () => {
               placeholder={t('Email placeholder')}
               type='input'
               sx={{
-                fontSize: '12px',
                 backgroundColor: '#fff',
                 borderRadius: '10px',
                 overflow: 'hidden',
@@ -169,6 +172,9 @@ const Footer = () => {
                 borderBottomRightRadius: '0',
                 '& .MuiOutlinedInput-notchedOutline': {
                   border: 'none',
+                },
+                '& .MuiOutlinedInput-input': {
+                  fontSize: '14px',
                 },
               }}
             />
