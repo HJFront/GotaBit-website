@@ -2,7 +2,14 @@ import React from 'react'
 
 const ScanIcon = () => {
   return (
-    <svg width='81' height='80' viewBox='0 0 81 80' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <svg
+      style={{ width: '100%', height: '100%' }}
+      width='81'
+      height='80'
+      viewBox='0 0 81 80'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
       <g opacity='0.7'>
         <path
           fillRule='evenodd'

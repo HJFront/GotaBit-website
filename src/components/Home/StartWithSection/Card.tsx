@@ -9,15 +9,17 @@ const Card = ({ icon, label }: { icon: React.ReactNode; label: string }) => {
         border: '2px solid rgba(255, 255, 255, 0.6)',
         borderRadius: '24px',
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: ['', '', 'center'],
         alignItems: 'center',
         p: ['26px 36px', '40px 50px'],
-        flexDirection: 'column',
+        flexDirection: ['row', 'row', 'column'],
         flex: 1,
-        ml: [0, 0, '26px'],
+        ml: ['auto', 'auto', '26px'],
+        mr: ['auto', 'auto', 0],
         mb: ['26px', '26px', 0],
+        boxShadow: '#13385f 4px 4px 0px 0px',
         '&: first-of-type': {
-          ml: 0,
+          ml: ['auto', 'auto', 0],
         },
         '&: hover': {
           transform: 'scale(1.02)',
@@ -26,14 +28,25 @@ const Card = ({ icon, label }: { icon: React.ReactNode; label: string }) => {
         },
       }}
     >
-      {icon}
+      <Box
+        sx={{
+          width: ['50px', '70px'],
+          height: ['50px', '70px'],
+          fontSize: 0,
+        }}
+      >
+        {icon}
+      </Box>
       <Typography
         component='h5'
         sx={{
           color: 'rgba(255, 255, 255, 0.7)',
           fontSize: ['14px', '20px', '26px'],
           fontWeight: 600,
-          mt: '20px',
+          mt: [0, 0, '20px'],
+          ml: ['20px', '20px', 0],
+          minWidth: ['190px', '290px', 0],
+          textAlign: ['left', 'left', 'center'],
         }}
       >
         {label}
