@@ -38,7 +38,7 @@ const getDesignTokens: (mode: PaletteMode) => ThemeOptions = (mode: PaletteMode)
     values: {
       xs: 0,
       sm: 600,
-      md: 980,
+      md: 1050,
       lg: 1200,
       xl: 1536,
     },

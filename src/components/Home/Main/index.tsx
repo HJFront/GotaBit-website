@@ -9,17 +9,17 @@ import LandingBgProvider from 'src/components/LandingBg/LandingBg'
 import styles from 'src/components/LandingBg/index.module.css'
 import GradientButton from 'src/components/Buttons/GradientButton'
 import OutlineButton from 'src/components/Buttons/OutlineButton'
+import StartWithSection from '../StartWithSection'
 
-const StyledTypography = styled((props: TypographyProps) => (
+export const StyledTypography = styled((props: TypographyProps) => (
   <Typography
+    fontSize='clamp(19px, 3.8vw, 56px)'
     {...props}
     className={styles.title}
     sx={{
       fontWeight: 600,
-      fontSize: 'clamp(19px, 3.8vw, 56px)',
       textAlign: 'center',
       color: '#fff',
-      textSizeAdjust: 'auto',
     }}
   />
 ))()
@@ -33,7 +33,7 @@ const Main = () => {
       component='div'
       sx={{
         width: '100%',
-        height: ['610px', '924px'],
+        // height: ['610px', '924px'],
         margin: ['0 auto 80px', '0 auto 148px'],
         zIndex: 1,
       }}
@@ -41,9 +41,8 @@ const Main = () => {
       <LandingBgProvider>
         <Container maxWidth='lg'>
           <NavBar isLightColor />
-        </Container>
-        <Container maxWidth='lg' sx={{ padding: 0 }}>
-          <Box mt={['110px']}>
+
+          <Box mt={['100px']}>
             <StyledTypography>
               <span>{t('Decentralised, Privacy-first')}</span>
             </StyledTypography>
@@ -51,7 +50,6 @@ const Main = () => {
               <span>{t('Cyberspace of the next generation')}</span>
             </StyledTypography>
           </Box>
-
           <Box
             sx={{
               display: 'flex',
@@ -91,6 +89,8 @@ const Main = () => {
               {t('Join The Community')}
             </OutlineButton>
           </Box>
+
+          <StartWithSection />
         </Container>
       </LandingBgProvider>
     </Box>
