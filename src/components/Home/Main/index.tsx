@@ -28,19 +28,19 @@ const Main = () => {
   const { t } = useTranslation('index')
 
   return (
-    <LandingBgProvider>
-      <Box
-        position='relative'
-        component='div'
-        sx={{
-          width: '100%',
-          height: ['610px', '924px'],
-          margin: ['0 auto 80px', '0 auto 148px'],
-          zIndex: 1,
-        }}
-      >
+    <Box
+      position='relative'
+      component='div'
+      sx={{
+        width: '100%',
+        height: ['610px', '924px'],
+        margin: ['0 auto 80px', '0 auto 148px'],
+        zIndex: 1,
+      }}
+    >
+      <LandingBgProvider>
         <Container maxWidth='lg'>
-          <NavBar />
+          <NavBar isLightColor />
         </Container>
         <Container maxWidth='lg' sx={{ padding: 0 }}>
           <Box mt={['110px']}>
@@ -57,6 +57,7 @@ const Main = () => {
               display: 'flex',
               justifyContent: ['center'],
               flexDirection: ['column', 'row'],
+              alignItems: 'center',
               mt: '40px',
               mx: ['20px', 0],
             }}
@@ -91,8 +92,8 @@ const Main = () => {
             </OutlineButton>
           </Box>
         </Container>
-      </Box>
-    </LandingBgProvider>
+      </LandingBgProvider>
+    </Box>
   )
 }
 
