@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     <Box position='relative' component='div'>
       <Main />
       <Container maxWidth='lg'>
-        <CoreModules />
+        {/* <CoreModules /> */}
         <BuildIng />
         <Footer />
       </Container>

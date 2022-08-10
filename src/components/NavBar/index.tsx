@@ -46,7 +46,7 @@ export type NavItem = {
   path?: string
 }
 
-const NavBar = () => {
+const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
   const { t } = useTranslation('nav')
   const theme = useTheme()
 
@@ -162,7 +162,7 @@ const NavBar = () => {
           // backgroundColor: {
           //   xs: theme.palette.background.default,
           // },
-          backgroundColor: [theme.palette.background.default, 'transparent'],
+          backgroundColor: [isLightColor ? 'transparent' : theme.palette.background.default, 'transparent'],
         }}
         variant='outlined'
         elevation={0}
@@ -182,7 +182,7 @@ const NavBar = () => {
             }}
           >
             <Link href='/'>
-              <GotaBitLogo />
+              <GotaBitLogo isLightColor={isLightColor} />
             </Link>
           </Box>
           <Box sx={{ display: ['none', 'none', 'flex'], alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
@@ -199,11 +199,11 @@ const NavBar = () => {
                           fontWeight: 600,
                           fontSize: 18,
                           alignItems: 'center',
+                          color: isLightColor ? 'rgba(255, 255, 255, 0.6)' : '',
                         }}
                         underline='none'
                       >
                         {item.label}
-                        {item?.path ? '' : <KeyboardArrowDownIcon fontSize='small' />}
                       </Link>
                     ) : (
                       <LightTooltip
@@ -224,37 +224,24 @@ const NavBar = () => {
                             fontWeight: 600,
                             fontSize: 18,
                             alignItems: 'center',
+                            color: isLightColor ? 'rgba(255, 255, 255, 0.6)' : '',
                           }}
                           underline='none'
                         >
                           {item.label}
-                          {item?.path ? '' : <KeyboardArrowDownIcon fontSize='small' />}
+                          {item?.path ? (
+                            ''
+                          ) : (
+                            <Box fontSize='18px' ml='4px' mt='6px'>
+                              <KeyboardArrowDownIcon fontSize='inherit' />
+                            </Box>
+                          )}
                         </Link>
                       </LightTooltip>
                     )}
                   </Grid>
                 ))}
               </Grid>
-            </Box>
-            <Box>
-              <Link href=''>
-                <GradientButton
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    height: '56px',
-                    width: ['166px'],
-                    borderRadius: '28px',
-                    mx: ['16px'],
-                  }}
-                >
-                  <Box width='18px' height='18px' mr='8px'>
-                    <WhiteLogo />
-                  </Box>
-                  {t('Launch App')}
-                </GradientButton>
-              </Link>
             </Box>
           </Box>
           <Box
@@ -273,6 +260,26 @@ const NavBar = () => {
             >
               <MenuIcon />
             </IconButton>
+          </Box>
+          <Box sx={{ display: ['none', 'none', 'block'] }}>
+            <Link href=''>
+              <GradientButton
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '56px',
+                  width: ['166px'],
+                  borderRadius: '28px',
+                  ml: ['20px'],
+                }}
+              >
+                <Box width='18px' height='18px' mr='8px'>
+                  <WhiteLogo />
+                </Box>
+                {t('Launch App')}
+              </GradientButton>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>

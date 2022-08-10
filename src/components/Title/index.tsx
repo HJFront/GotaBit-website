@@ -5,7 +5,7 @@ interface TitleProps extends TypographyProps {
   /**
    * type
    */
-  type: 'title' | 'subTitle';
+  type: 'title' | 'subTitle'
 }
 
 /**
@@ -18,27 +18,32 @@ const Title = ({ type, sx, children }: PropsWithChildren<TitleProps>) => {
   return (
     <Typography
       component={isSubTitle ? 'h6' : 'h3'}
-      sx={type === 'subTitle' ? {
-        textAlign: ['center'],
-        fontWeight: '400',
-        fontSize: ['16px', '24px'],
-        width: ['100%', '70%'],
-        lineHeight: {
-          xs: 1.2,
-        },
-        mb: ['24px', '56px'],
-        mx: ['auto'],
-        ...sx,
-      } : {
-        textAlign: ['center'],
-        fontWeight: '600',
-        fontSize: ['32px', '56px'],
-        lineHeight: {
-          xs: 1.2,
-        },
-        mb: ['24px', '56px'],
-        ...sx,
-      }}
+      sx={
+        type === 'subTitle'
+          ? {
+              textAlign: ['left', 'center'],
+              fontWeight: '400',
+              fontSize: ['16px', '20px'],
+              width: ['100%', '70%'],
+              lineHeight: {
+                xs: 1.2,
+              },
+              mb: ['30px', '56px'],
+              mx: ['auto'],
+              color: 'rgba(11, 27, 66, 0.7)',
+              ...sx,
+            }
+          : {
+              textAlign: ['left', 'center'],
+              fontWeight: '600',
+              fontSize: ['32px', '56px'],
+              lineHeight: {
+                xs: 1.2,
+              },
+              mb: ['24px', '56px'],
+              ...sx,
+            }
+      }
     >
       {children}
     </Typography>

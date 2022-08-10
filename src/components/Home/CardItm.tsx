@@ -32,16 +32,18 @@ const CardItm = ({ sx, children }: PropsWithChildren<PaperProps>) => {
       className={classes.buildList}
       sx={{
         display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-evenly',
-        alignItems: 'flex-start',
-        height: ['147px', '222px'],
-        padding: ['0 16px', '0 40px'],
+        // flexDirection: 'column',
+        // justifyContent: 'space-evenly',
+        alignItems: 'center',
+        // height: ['147px', '222px'],
+        padding: ['30px', '40px'],
         background: '#FFFFFF',
         border: '1px solid rgba(0, 61, 217, 0.1)',
         borderRadius: ['20px', '24px'],
         boxShadow: 'none',
         fontWeight: 600,
+        maxWidth: '484px',
+        mx: ['auto'],
         ...sx,
       }}
     >
