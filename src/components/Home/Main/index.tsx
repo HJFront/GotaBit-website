@@ -20,6 +20,7 @@ export const StyledTypography = styled((props: TypographyProps) => (
       fontWeight: 600,
       textAlign: 'center',
       color: '#fff',
+      lineHeight: 1.2,
     }}
   />
 ))()
@@ -42,7 +43,7 @@ const Main = () => {
         <Container maxWidth='lg'>
           <NavBar isLightColor />
 
-          <Box mt={['100px']}>
+          <Box mt={['76px']}>
             <StyledTypography>
               <span>{t('Decentralised, Privacy-first')}</span>
             </StyledTypography>
