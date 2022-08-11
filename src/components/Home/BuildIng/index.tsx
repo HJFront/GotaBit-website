@@ -103,9 +103,8 @@ const BuildIng = () => {
                   gutterBottom
                   fontSize={['24px']}
                   sx={{
-                    height: '70px',
                     mb: 0,
-                    lineHeight: 1,
+                    lineHeight: '30px',
                   }}
                 >
                   {t('Deploy your application easily')}
@@ -118,7 +117,7 @@ const BuildIng = () => {
                     color: '#003DD9',
                     boxShadow: 'none',
                     borderRadius: '100px',
-                    ml: [0, '20px', 0],
+                    ml: [0, '30px'],
                     '&:hover': {
                       backgroundColor: 'rgba(255, 255, 255, 0.95)',
                     },
