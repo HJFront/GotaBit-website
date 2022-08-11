@@ -268,13 +268,15 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  height: '56px',
-                  width: ['166px'],
-                  borderRadius: '28px',
+                  height: '48px',
+                  width: ['164px'],
+                  borderRadius: '24px',
                   ml: ['20px'],
+                  fontWeight: 500,
+                  fontSize: '16px',
                 }}
               >
-                <Box width='18px' height='18px' mr='8px'>
+                <Box width='18px' height='18px' mr='10px' mb='2px'>
                   <WhiteLogo />
                 </Box>
                 {t('Launch App')}

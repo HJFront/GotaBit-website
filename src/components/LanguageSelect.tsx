@@ -2,6 +2,7 @@ import { Box, ClickAwayListener, MenuItem, Typography } from '@mui/material'
 import React, { memo, useState } from 'react'
 import { isMobile } from 'react-device-detect'
 import { useTranslation } from 'react-i18next'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { LightTooltip } from './NavBar'
 
 const EarthIcon = () => (
@@ -91,13 +92,20 @@ const LanguageSelect = () => {
             cursor: 'pointer',
             border: '1px solid',
             borderRadius: '100px',
-            p: ['6px 12px', '12px 20px'],
+            p: ['6px 12px', '10px 18px'],
             color: 'rgba(255, 255, 255, 0.3)',
             ml: ['30px'],
+            '&:hover .MuiTypography-root, &:hover .MuiSvgIcon-root': {
+              color: 'text.info',
+            },
+            '&:hover .earth > svg > path': {
+              fill: '#198BFE',
+            },
           }}
           onClick={handleTooltipOpen}
         >
           <Box
+            className='earth'
             sx={{
               width: ['18px', 'auto'],
               fontSize: 0,
@@ -121,16 +129,22 @@ const LanguageSelect = () => {
               sx={{
                 fontSize: ['12px', '16px'],
                 fontWeight: 600,
-                marginLeft: '6px',
+                marginLeft: '10px',
                 color: 'rgba(255, 255, 255, 0.6)',
-                '&:hover': {
-                  color: 'text.info',
-                },
               }}
             >
               {i18n?.language == 'en' ? supportLanguages[0].label : supportLanguages[1].label}
             </Typography>
           </LightTooltip>
+
+          <Box fontSize='14px' ml='4px' mt='5px'>
+            <KeyboardArrowDownIcon
+              sx={{
+                color: 'rgba(255, 255, 255, 0.6)',
+              }}
+              fontSize='inherit'
+            />
+          </Box>
         </Box>
       </div>
     </ClickAwayListener>

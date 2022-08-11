@@ -1,9 +1,13 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
 
-const Card = ({ icon, label }: { icon: React.ReactNode; label: string }) => {
+const Card = ({ icon, label, url }: { icon: React.ReactNode; label: string; url: string }) => {
   return (
     <Box
+      component='a'
+      href={url}
+      target='_blank'
+      rel='noreferrer'
       sx={{
         background: '#111820',
         border: '2px solid rgba(255, 255, 255, 0.6)',
@@ -25,7 +29,9 @@ const Card = ({ icon, label }: { icon: React.ReactNode; label: string }) => {
           transform: 'scale(1.02)',
           transition: 'transform 0.1s ease 0s',
           boxShadow: '5px 5px 20px -15px rgba(255, 255, 255, 1)',
+          background: '#151E27',
         },
+        textDecoration: 'none',
       }}
     >
       <Box
@@ -41,7 +47,7 @@ const Card = ({ icon, label }: { icon: React.ReactNode; label: string }) => {
         component='h5'
         sx={{
           color: 'rgba(255, 255, 255, 0.7)',
-          fontSize: ['14px', '20px', '26px'],
+          fontSize: ['14px', '20px', '24px'],
           fontWeight: 600,
           mt: [0, 0, '20px'],
           ml: ['20px', '20px', 0],
