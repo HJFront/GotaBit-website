@@ -46,7 +46,7 @@ const StartWithSection = () => {
           display: 'flex',
           justifyContent: 'space-between',
           mt: ['30px', '56px'],
-          flexDirection: ['column', 'column', 'row'],
+          flexDirection: ['column', 'row', 'row'],
         }}
       >
         {items.map(item => (

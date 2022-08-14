@@ -15,10 +15,10 @@ const Card = ({ icon, label, url }: { icon: React.ReactNode; label: string; url:
         display: 'flex',
         justifyContent: ['', '', 'center'],
         alignItems: 'center',
-        p: ['26px 36px', '40px 50px'],
-        flexDirection: ['row', 'row', 'column'],
+        p: ['26px 36px', '30px 26px', '40px 50px'],
+        flexDirection: ['row', 'column', 'column'],
         flex: 1,
-        ml: ['auto', 'auto', '26px'],
+        ml: ['auto', '18px', '26px'],
         mr: ['auto', 'auto', 0],
         mb: ['26px', '26px', 0],
         boxShadow: '#13385f 4px 4px 0px 0px',
@@ -36,8 +36,8 @@ const Card = ({ icon, label, url }: { icon: React.ReactNode; label: string; url:
     >
       <Box
         sx={{
-          width: ['50px', '70px'],
-          height: ['50px', '70px'],
+          width: ['50px', '50px', '70px'],
+          height: ['50px', '50px', '70px'],
           fontSize: 0,
         }}
       >
@@ -47,11 +47,11 @@ const Card = ({ icon, label, url }: { icon: React.ReactNode; label: string; url:
         component='h5'
         sx={{
           color: 'rgba(255, 255, 255, 0.7)',
-          fontSize: ['14px', '20px', '24px'],
+          fontSize: ['14px', '16px', '24px'],
           fontWeight: 600,
-          mt: [0, 0, '20px'],
-          ml: ['20px', '20px', 0],
-          minWidth: ['190px', '290px', 0],
+          mt: [0, '14px', '20px'],
+          ml: ['20px', 0, 0],
+          minWidth: ['190px', 0, 0],
           textAlign: ['left', 'left', 'center'],
         }}
       >
