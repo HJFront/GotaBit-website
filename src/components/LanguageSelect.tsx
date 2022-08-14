@@ -48,7 +48,7 @@ const LanguageSelect = () => {
   }
 
   const handleTooltipOpen = () => {
-    setOpen(true)
+    setOpen(!open)
   }
 
   const handleLanguageChange = (lan: string) => {

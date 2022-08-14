@@ -42,56 +42,64 @@ const Main = () => {
       <LandingBgProvider>
         <Container maxWidth='lg'>
           <NavBar isLightColor />
-
-          <Box mt={['76px']}>
-            <StyledTypography>
-              <span>{t('Decentralised, Privacy-first')}</span>
-            </StyledTypography>
-            <StyledTypography>
-              <span>{t('Cyberspace of the next generation')}</span>
-            </StyledTypography>
-          </Box>
           <Box
             sx={{
               display: 'flex',
-              justifyContent: ['center'],
-              flexDirection: ['column', 'row'],
-              alignItems: 'center',
-              mt: '40px',
-              mx: ['20px', 0],
+              justifyContent: 'center',
+              minHeight: 'calc(100vh - 172px)',
+              flexDirection: 'column',
             }}
           >
-            <GradientButton
+            <Box mt={['76px']}>
+              <StyledTypography>
+                <span>{t('Decentralised, Privacy-first')}</span>
+              </StyledTypography>
+              <StyledTypography>
+                <span>{t('Cyberspace of the next generation')}</span>
+              </StyledTypography>
+            </Box>
+            <Box
               sx={{
-                width: ['200px', '280px'],
-                height: ['50px', '64px'],
-                borderRadius: ['50px', '64px'],
-                fontSize: ['14px', '18px'],
-                fontWeight: 500,
-              }}
-              onClick={() => {
-                window.open('https://docs.hjcore.io/')
+                display: 'flex',
+                justifyContent: ['center'],
+                flexDirection: ['column', 'row'],
+                alignItems: 'center',
+                mt: '40px',
+                mx: ['20px', 0],
               }}
             >
-              {t('Start')}
-            </GradientButton>
-            <OutlineButton
-              sx={{
-                width: ['200px', '280px'],
-                height: ['50px', '64px'],
-                borderRadius: ['50px', '64px'],
-                fontSize: ['14px', '18px'],
-                fontWeight: 500,
-                ml: [0, '28px'],
-                mt: ['30px', 0],
-                color: 'rgba(255, 255, 255, 1)',
-              }}
-            >
-              {t('Join The Community')}
-            </OutlineButton>
-          </Box>
+              <GradientButton
+                sx={{
+                  width: ['200px', '240px', '280px'],
+                  height: ['50px', '56px', '64px'],
+                  borderRadius: ['50px', '64px'],
+                  fontSize: ['14px', '16px', '18px'],
+                  fontWeight: 500,
+                }}
+                onClick={() => {
+                  window.open('https://docs.hjcore.io/')
+                }}
+              >
+                {t('Start')}
+              </GradientButton>
+              <OutlineButton
+                sx={{
+                  width: ['200px', '240px', '280px'],
+                  height: ['50px', '56px', '64px'],
+                  borderRadius: ['50px', '64px'],
+                  fontSize: ['14px', '16px', '18px'],
+                  fontWeight: 500,
+                  ml: [0, '28px'],
+                  mt: ['30px', 0],
+                  color: 'rgba(255, 255, 255, 1)',
+                }}
+              >
+                {t('Join The Community')}
+              </OutlineButton>
+            </Box>
 
-          <StartWithSection />
+            <StartWithSection />
+          </Box>
         </Container>
       </LandingBgProvider>
     </Box>
