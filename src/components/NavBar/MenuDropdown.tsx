@@ -95,7 +95,11 @@ const MenuDropdown = ({ navKey, currentNav, dropdownMenu, setCurrentNav, childre
                       <Link
                         underline='none'
                         href={item.url}
-                        sx={{ display: 'flex', alignItems: 'center', fontSize: 0 }}
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          fontSize: 0,
+                        }}
                       >
                         <ExpandCircleDownOutlinedIcon
                           fontSize='small'
