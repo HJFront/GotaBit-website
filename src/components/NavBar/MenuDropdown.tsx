@@ -26,7 +26,7 @@ const MenuDropdown = ({ navKey, currentNav, dropdownMenu, setCurrentNav, childre
           position: 'fixed',
           width: '100vw',
           left: 0,
-          zIndex: isCurrentNav ? 11 : 10,
+          zIndex: isCurrentNav ? 11 : -1,
           top: '96px',
           overflow: 'hidden',
         }}
@@ -70,6 +70,7 @@ const MenuDropdown = ({ navKey, currentNav, dropdownMenu, setCurrentNav, childre
                       pt: '30px',
                       pb: '16px',
                       pl: '20px',
+                      mb: '20px',
                       borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
                       fontWeight: 600,
                       color: 'rgba(0, 0, 0, 0.7)',
@@ -84,7 +85,7 @@ const MenuDropdown = ({ navKey, currentNav, dropdownMenu, setCurrentNav, childre
                       sx={{
                         pl: '20px',
                         py: '12px',
-                        mt: '20px',
+                        mt: '14px',
                         borderRadius: '10px',
                         '&: hover': {
                           backgroundColor: '#F5F7FD',
