@@ -5,8 +5,8 @@ import { Box, Container } from '@mui/material'
 import Main from 'src/components/Home/Main'
 import CoreModules from 'src/components/Home/CoreModules'
 import BuildIng from 'src/components/Home/BuildIng'
-import Footer from 'src/components/Footer'
 import { prefix } from 'utils/prefix'
+import Footer from 'src/components/Footer/indexV2'
 
 const Home: NextPage = () => {
   return (

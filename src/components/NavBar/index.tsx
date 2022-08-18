@@ -1,4 +1,4 @@
-import { AppBar, Box, Drawer, Grid, IconButton, Toolbar } from '@mui/material'
+import { AppBar, Box, Drawer, Grid, IconButton, Toolbar, ClickAwayListener } from '@mui/material'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
@@ -8,11 +8,12 @@ import GotaBitLogo from './GotaBitLogo'
 import LanguageSelect from '../LanguageSelect'
 import Link from '../Link'
 import GradientButton from '../Buttons/GradientButton'
-import DropdownMenu, { DropdownMenuType } from './DropdownMenu'
-import DropdownContact from './DropdownContact'
+import { DropdownMenuType } from './DropdownMenu'
 import MenuIcon from './MenuIcon'
 import DrawerContent from './DrawerContent'
 import WhiteLogo from './WhiteLogo'
+import MenuDropdown from './MenuDropdown'
+import useScrollListener from 'src/hooks/useScrollListener'
 
 const drawerWidth = '100%'
 const container = typeof window !== undefined ? () => window.document.body : undefined
@@ -51,6 +52,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
   const theme = useTheme()
 
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [currentNav, setCurrentNav] = useState('')
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen)
@@ -68,7 +70,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
             {
               title: t('What is GotaBit?'),
               description: t('Explore the internal principles of GotaBit and its differences to other blockchains.'),
-              url: '/',
+              url: 'https://docs.hjcore.io/',
             },
             {
               title: t('FQA'),
@@ -145,77 +147,54 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
       label: t('Ecosystem'),
       path: '/dapp',
     },
-    {
-      key: 'GetInvolved',
-      label: t('Get Involved'),
-    },
   ]
 
+  const { y } = useScrollListener()
+  if (y > 50 && currentNav) {
+    setCurrentNav('')
+  }
+
   return (
-    <Box>
-      <AppBar
-        component='nav'
-        position='relative'
-        sx={{
-          border: 'none',
-          py: [0, '16px'],
-          // backgroundColor: {
-          //   xs: theme.palette.background.default,
-          // },
-          backgroundColor: [isLightColor ? 'transparent' : theme.palette.background.default, 'transparent'],
-        }}
-        variant='outlined'
-        elevation={0}
-      >
-        <Toolbar
+    <ClickAwayListener onClickAway={() => setCurrentNav('')}>
+      <div>
+        <AppBar
+          component='nav'
+          position='relative'
           sx={{
-            // width: '100%',
-            justifyContent: 'space-between',
+            border: 'none',
+            py: [0, '16px'],
+            // backgroundColor: {
+            //   xs: theme.palette.background.default,
+            // },
+            backgroundColor: [isLightColor ? 'transparent' : theme.palette.background.default, 'transparent'],
           }}
-          disableGutters
+          variant='outlined'
+          elevation={0}
         >
-          <Box
+          <Toolbar
             sx={{
-              width: ['132px', 'auto'],
-              mr: '8px',
-              mt: ['10px', '0'],
+              // width: '100%',
+              justifyContent: 'space-between',
             }}
+            disableGutters
           >
-            <Link href='/'>
-              <GotaBitLogo isLightColor={isLightColor} />
-            </Link>
-          </Box>
-          <Box sx={{ display: ['none', 'none', 'flex'], alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
-            <Box>
-              <Grid container spacing={[0, 1, 3, 5, 6]}>
-                {navItems.map(item => (
-                  <Grid item key={item.key}>
-                    {item?.path ? (
-                      <Link
-                        color='text.primary'
-                        href={item?.path ?? ''}
-                        sx={{
-                          display: 'inline-flex',
-                          fontWeight: 600,
-                          fontSize: 18,
-                          alignItems: 'center',
-                          color: isLightColor ? 'rgba(255, 255, 255, 0.6)' : '',
-                        }}
-                        underline='none'
-                      >
-                        {item.label}
-                      </Link>
-                    ) : (
-                      <LightTooltip
-                        title={
-                          item.key === 'GetInvolved' ? (
-                            <DropdownContact />
-                          ) : (
-                            <DropdownMenu list={item.dropdownMenu as unknown as DropdownMenuType[]} />
-                          )
-                        }
-                        arrow
-                      >
+            <Box
+              sx={{
+                width: ['132px', 'auto'],
+                mr: '8px',
+                mt: ['10px', '0'],
+              }}
+            >
+              <Link href='/'>
+                <GotaBitLogo isLightColor={isLightColor} />
+              </Link>
+            </Box>
+            <Box sx={{ display: ['none', 'none', 'flex'], alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
+              <Box>
+                <Grid container spacing={[0, 1, 3, 5, 6]}>
+                  {navItems.map(item => (
+                    <Grid item key={item.key}>
+                      {item?.path ? (
                         <Link
                           color='text.primary'
                           href={item?.path ?? ''}
@@ -229,85 +208,112 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
                           underline='none'
                         >
                           {item.label}
-                          {item?.path ? (
-                            ''
-                          ) : (
-                            <Box fontSize='18px' ml='4px' mt='6px'>
-                              <KeyboardArrowDownIcon fontSize='inherit' />
-                            </Box>
-                          )}
                         </Link>
-                      </LightTooltip>
-                    )}
-                  </Grid>
-                ))}
-              </Grid>
+                      ) : (
+                        <MenuDropdown
+                          setCurrentNav={setCurrentNav}
+                          navKey={item.key}
+                          currentNav={currentNav}
+                          dropdownMenu={item.dropdownMenu}
+                        >
+                          <Link
+                            href={item?.path ?? ''}
+                            sx={{
+                              display: 'inline-flex',
+                              fontWeight: 600,
+                              fontSize: 18,
+                              alignItems: 'center',
+                              color: isLightColor
+                                ? item.key === currentNav
+                                  ? 'text.info'
+                                  : 'rgba(255, 255, 255, 0.6)'
+                                : '',
+                            }}
+                            underline='none'
+                          >
+                            {item.label}
+                            <Box fontSize='18px' ml='4px' mt='6px'>
+                              <KeyboardArrowDownIcon
+                                fontSize='inherit'
+                                sx={{
+                                  transition: 'all 0.2s',
+                                  transform: item.key === currentNav ? 'rotate(180deg)' : 'rotate(0deg',
+                                }}
+                              />
+                            </Box>
+                          </Link>
+                        </MenuDropdown>
+                      )}
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
             </Box>
-          </Box>
-          <Box
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <LanguageSelect />
+              <IconButton
+                color='primary'
+                aria-label='open drawer'
+                edge='start'
+                onClick={handleDrawerToggle}
+                sx={{ display: ['block', 'block', 'none'], mr: '-8px', ml: '10px' }}
+              >
+                <MenuIcon />
+              </IconButton>
+            </Box>
+            <Box sx={{ display: ['none', 'none', 'block'] }}>
+              <Link href=''>
+                <GradientButton
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: '48px',
+                    width: ['164px'],
+                    borderRadius: '24px',
+                    ml: ['20px'],
+                    fontWeight: 500,
+                    fontSize: '16px',
+                  }}
+                >
+                  <Box width='18px' height='18px' mr='10px' mb='2px'>
+                    <WhiteLogo />
+                  </Box>
+                  {t('Launch App')}
+                </GradientButton>
+              </Link>
+            </Box>
+          </Toolbar>
+        </AppBar>
+        <Box component='nav'>
+          <Drawer
+            container={container}
+            variant='temporary'
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+            anchor='right'
             sx={{
-              display: 'flex',
-              alignItems: 'center',
+              display: ['block', 'block', 'none'],
+              '& .MuiDrawer-paper': {
+                boxSizing: 'border-box',
+                width: drawerWidth,
+              },
+              backgroundColor: ['transparent'],
             }}
           >
-            <LanguageSelect />
-            <IconButton
-              color='primary'
-              aria-label='open drawer'
-              edge='start'
-              onClick={handleDrawerToggle}
-              sx={{ display: ['block', 'block', 'none'], mr: '-8px', ml: '10px' }}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: ['none', 'none', 'block'] }}>
-            <Link href=''>
-              <GradientButton
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: '48px',
-                  width: ['164px'],
-                  borderRadius: '24px',
-                  ml: ['20px'],
-                  fontWeight: 500,
-                  fontSize: '16px',
-                }}
-              >
-                <Box width='18px' height='18px' mr='10px' mb='2px'>
-                  <WhiteLogo />
-                </Box>
-                {t('Launch App')}
-              </GradientButton>
-            </Link>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <Box component='nav'>
-        <Drawer
-          container={container}
-          variant='temporary'
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          anchor='right'
-          sx={{
-            display: ['block', 'block', 'none'],
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
-              width: drawerWidth,
-            },
-            backgroundColor: ['transparent'],
-          }}
-        >
-          <DrawerContent navItems={navItems} onClose={handleDrawerToggle} />
-        </Drawer>
-      </Box>
-    </Box>
+            <DrawerContent navItems={navItems} onClose={handleDrawerToggle} />
+          </Drawer>
+        </Box>
+      </div>
+    </ClickAwayListener>
   )
 }
 

@@ -49,7 +49,7 @@ const BuildIng = () => {
   ]
 
   return (
-    <Box position='relative' component='div' marginBottom={['100px', '200px']}>
+    <Box position='relative' component='div' marginBottom={['80px', '150px']}>
       <Box>
         <Title sx={{ mb: ['8px', '12px'] }}>{t('Build with us')}</Title>
         <Title type='subTitle' sx={{ mb: ['24px', '56px'] }}>

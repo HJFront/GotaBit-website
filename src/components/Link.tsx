@@ -86,7 +86,20 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(props,
       return <Anchor className={className} href={href} ref={ref} {...other} />
     }
 
-    return <MuiLink className={className} href={href} ref={ref} {...other} />
+    return (
+      <MuiLink
+        className={className}
+        href={href}
+        ref={ref}
+        {...other}
+        sx={{
+          ...other.sx,
+          '&:hover': {
+            color: 'text.info',
+          },
+        }}
+      />
+    )
   }
 
   const linkAs = linkAsProp || as
@@ -104,7 +117,21 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(props,
     return <NextLinkComposed className={className} ref={ref} {...nextjsProps} {...other} />
   }
 
-  return <MuiLink component={NextLinkComposed} className={className} ref={ref} {...nextjsProps} {...other} />
+  return (
+    <MuiLink
+      component={NextLinkComposed}
+      className={className}
+      ref={ref}
+      {...nextjsProps}
+      {...other}
+      sx={{
+        ...other.sx,
+        '&:hover': {
+          color: 'text.info',
+        },
+      }}
+    />
+  )
 })
 
 export default Link
