@@ -57,6 +57,7 @@ const Footer = () => {
             sx={{
               width: ['200px', '220px'],
               mb: ['40px', '106px'],
+              display: ['none', 'none', 'block'],
             }}
           >
             <GotaBitLogo />
