@@ -5,7 +5,7 @@ const GotaBitLogo = ({ isLightColor }: { isLightColor?: boolean }) => {
     <>
       {isLightColor ? (
         <svg
-          style={{ width: '100%' }}
+          style={{ width: '100%', height: '100%' }}
           width='176'
           height='41'
           viewBox='0 0 176 41'
@@ -75,7 +75,7 @@ const GotaBitLogo = ({ isLightColor }: { isLightColor?: boolean }) => {
         </svg>
       ) : (
         <svg
-          style={{ width: '100%' }}
+          style={{ width: '100%', height: '100%' }}
           width='176'
           height='41'
           viewBox='0 0 176 41'
