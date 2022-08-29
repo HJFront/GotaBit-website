@@ -121,7 +121,7 @@ const LanguageSelect = () => {
               <Box
                 className='earth'
                 sx={{
-                  width: ['18px', 'auto'],
+                  width: ['18px', '25px'],
                   fontSize: 0,
                 }}
               >

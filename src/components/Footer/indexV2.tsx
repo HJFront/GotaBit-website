@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import GradientButton from '../Buttons/GradientButton'
 import ContactIcons from '../ContactIcons/indexV2'
 import Link from '../Link'
-import GotaBitLogo from '../NavBar/GotaBitLogo'
+import Logo from './Logo'
 
 const StyledTypography = ({ children }: PropsWithChildren<{}>) => (
   <Typography
@@ -66,7 +66,7 @@ const Footer = () => {
               display: ['none', 'none', 'block'],
             }}
           >
-            <GotaBitLogo />
+            <Logo />
           </Box>
           <StyledTypography>{t('Subscribe for GotaBit Network updates')}</StyledTypography>
           <Box
