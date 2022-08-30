@@ -28,7 +28,7 @@ export default function MyApp(props: MyAppProps) {
           <InitTheme>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
-            <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
+            <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' }, body: { overflowX: 'hidden' } }} />
             <Component {...pageProps} />
           </InitTheme>
         </CacheProvider>
