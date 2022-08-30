@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import GradientButton from '../Buttons/GradientButton'
 import ContactIcons from '../ContactIcons/indexV2'
 import Link from '../Link'
-import GotaBitLogo from '../NavBar/GotaBitLogo'
+import Logo from './Logo'
 
 const StyledTypography = ({ children }: PropsWithChildren<{}>) => (
   <Typography
@@ -48,11 +48,17 @@ const Footer = () => {
       <Box
         sx={{
           display: 'flex',
-          justifyContent: ['space-evenly'],
           flexDirection: ['column', 'column', 'row'],
+          alignItems: ['center', 'center', 'start'],
         }}
       >
-        <Box mr={[0, '40px']}>
+        <Box
+          sx={{
+            flex: '1',
+            mr: [0, 0, '80px', '140px'],
+            minWidth: ['none', '460px', 'auto'],
+          }}
+        >
           <Box
             sx={{
               width: ['200px', '220px'],
@@ -60,7 +66,7 @@ const Footer = () => {
               display: ['none', 'none', 'block'],
             }}
           >
-            <GotaBitLogo />
+            <Logo />
           </Box>
           <StyledTypography>{t('Subscribe for GotaBit Network updates')}</StyledTypography>
           <Box
@@ -71,8 +77,6 @@ const Footer = () => {
               border: '1px solid #E6ECFB',
               mb: '24px',
             }}
-            minWidth={['none', '330px']}
-            maxWidth={['none', '400px']}
           >
             <TextField
               name='email'
@@ -108,7 +112,12 @@ const Footer = () => {
             </GradientButton>
           </Box>
         </Box>
-        <Box>
+        <Box
+          sx={{
+            flex: '1',
+            minWidth: ['none', '460px', 'auto'],
+          }}
+        >
           <StyledTypography>{t('About')}</StyledTypography>
           <Grid container spacing={2} mb={['30px', '46px']}>
             {items.map(item => (

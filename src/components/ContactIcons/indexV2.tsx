@@ -91,7 +91,13 @@ const ContactIcons = () => {
     },
   ]
   return (
-    <Box>
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: ['start', 'space-between'],
+        maxWidth: ['none', '500px'],
+      }}
+    >
       {icons.map((icon, index) => (
         <Link
           key={index}
