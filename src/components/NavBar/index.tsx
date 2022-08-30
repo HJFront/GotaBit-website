@@ -131,7 +131,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
           items: [
             {
               title: t('Node Application'),
-              description: t('Search for the required tools and instructions for developing on GotaBit.'),
+              description: t('Join the governance of GotaBit ecosystem.'),
               url: '/',
             },
             {
@@ -189,7 +189,14 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
                 <GotaBitLogo isLightColor={isLightColor} />
               </Link>
             </Box>
-            <Box sx={{ display: ['none', 'none', 'flex'], alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
+            <Box
+              sx={{
+                display: ['none', 'none', 'flex'],
+                alignItems: 'center',
+                flex: 1,
+                justifyContent: 'flex-end',
+              }}
+            >
               <Box>
                 <Grid container spacing={[0, 1, 3, 5, 6]}>
                   {navItems.map(item => (
@@ -255,7 +262,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
                 alignItems: 'center',
               }}
             >
-              <LanguageSelect />
+              <LanguageSelect isLightColor={isLightColor} />
               <IconButton
                 color='primary'
                 aria-label='open drawer'

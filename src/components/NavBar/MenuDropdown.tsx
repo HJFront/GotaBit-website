@@ -29,6 +29,8 @@ const MenuDropdown = ({ navKey, currentNav, dropdownMenu, setCurrentNav, childre
           zIndex: isCurrentNav ? 11 : -1,
           top: '96px',
           overflow: 'hidden',
+          paddingBottom: '100px',
+          pointerEvents: 'none',
         }}
       >
         <Box
@@ -39,6 +41,8 @@ const MenuDropdown = ({ navKey, currentNav, dropdownMenu, setCurrentNav, childre
             zIndex: isCurrentNav ? 2 : 1,
             transform: isCurrentNav ? 'translateY(0)' : 'translateY(-400px)',
             opacity: isCurrentNav ? 1 : 0,
+            boxShadow: '35px 35px 50px 0 rgb(36 50 66 / 15%)',
+            pointerEvents: 'all',
           }}
         >
           <Box
