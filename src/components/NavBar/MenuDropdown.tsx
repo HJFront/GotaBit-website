@@ -99,6 +99,8 @@ const MenuDropdown = ({ navKey, currentNav, dropdownMenu, setCurrentNav, childre
                       <Link
                         underline='none'
                         href={item.url}
+                        target='_blank'
+                        rel='noopener'
                         sx={{
                           display: 'flex',
                           alignItems: 'center',

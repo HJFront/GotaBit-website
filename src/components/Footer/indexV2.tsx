@@ -30,7 +30,8 @@ const Footer = () => {
     {
       key: 'join',
       label: t('Join GotaBit'),
-      url: '/',
+      url: 'https://discord.gg/zhz9C7HB',
+      newTab: true,
     },
     {
       key: 'policy',
@@ -40,7 +41,7 @@ const Footer = () => {
     {
       key: 'contract',
       label: t('Contact Us'),
-      url: '/',
+      url: 'mailto:GotaBit@mate.com',
     },
   ]
   return (
@@ -126,6 +127,9 @@ const Footer = () => {
               <Grid item xs={6} key={item.key}>
                 <Link
                   href={item.url}
+                  target={item.newTab ? '_blank' : undefined}
+                  rel='noopener'
+                  underline='none'
                   sx={{
                     flex: 1,
                     fontSize: '14px',

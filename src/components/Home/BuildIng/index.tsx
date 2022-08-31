@@ -110,6 +110,10 @@ const BuildIng = () => {
                   {t('Deploy your application easily')}
                 </Typography>
                 <Button
+                  component='a'
+                  target='_blank'
+                  rel='noopener'
+                  href='https://docs.hjcore.io/'
                   variant='contained'
                   sx={{
                     width: ['120px', '130px'],
@@ -121,9 +125,6 @@ const BuildIng = () => {
                     '&:hover': {
                       backgroundColor: 'rgba(255, 255, 255, 0.95)',
                     },
-                  }}
-                  onClick={() => {
-                    window.open('https://docs.hjcore.io/')
                   }}
                 >
                   {t('Start')}

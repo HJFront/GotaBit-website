@@ -27,7 +27,7 @@ const StartWithSection = () => {
       key: 'validator',
       icon: <ValidatorIcon />,
       label: t('Validator'),
-      url: 'https://docs.hjcore.io/',
+      url: 'https://docs.hjcore.io/node/setup/installation',
     },
   ]
 
