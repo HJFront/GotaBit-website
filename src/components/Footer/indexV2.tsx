@@ -56,13 +56,13 @@ const Footer = () => {
           sx={{
             flex: '1',
             mr: [0, 0, '80px', '140px'],
-            minWidth: ['none', '460px', 'auto'],
+            minWidth: ['100%', '460px', 'auto'],
           }}
         >
           <Box
             sx={{
               width: ['200px', '220px'],
-              mb: ['40px', '106px'],
+              mb: '90px',
               display: ['none', 'none', 'block'],
             }}
           >
@@ -90,6 +90,7 @@ const Footer = () => {
                 overflow: 'hidden',
                 borderTopRightRadius: '0',
                 borderBottomRightRadius: '0',
+                flex: 1,
                 '& .MuiOutlinedInput-notchedOutline': {
                   border: 'none',
                 },
@@ -112,10 +113,11 @@ const Footer = () => {
             </GradientButton>
           </Box>
         </Box>
+
         <Box
           sx={{
             flex: '1',
-            minWidth: ['none', '460px', 'auto'],
+            minWidth: ['100%', '460px', 'auto'],
           }}
         >
           <StyledTypography>{t('About')}</StyledTypography>

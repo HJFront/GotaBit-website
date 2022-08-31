@@ -10,7 +10,7 @@ import dapp from '../locales/en/dapp.json'
 
 import nav_zh from '../locales/zh/nav.json'
 import footer_zh from '../locales/zh/footer.json'
-import index_zh from '../locales/zh/common.json'
+import index_zh from '../locales/zh/index.json'
 import common_zh from '../locales/zh/common.json'
 import dapp_zh from '../locales/zh/dapp.json'
 

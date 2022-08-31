@@ -1,9 +1,8 @@
 {
-  "title": "Your web3 username, index",
   "MainTitle": "Decentralised, Privacy-first Cyberspace of the next generation",
   "Core modules": "Core modules",
-  "GotaBitscan": "GotaBitscan",
   "GotaBit Wallet": "GotaBit Wallet",
+  "GotaBit Scan": "GotaBit Scan",
   "Validator": "Validator",
   "Build with us": "Build with us",
   "Build with us Subtitle": "To realise the goal of establishing a diversified and inclusive ecosystem, we have developed multiple tools.",
@@ -15,6 +14,7 @@
   "Deploy your application easily": "Deploy your application easily",
   "Start": "Start",
   "Join The Community": "Join The Community",
+  "Start with": "Start with",
   "Decentralised, Privacy-first": "Decentralised, Privacy-first",
   "Cyberspace of the next generation": "Cyberspace of the next generation",
   "Decentralized Authentication System": "Decentralized Authentication System",
