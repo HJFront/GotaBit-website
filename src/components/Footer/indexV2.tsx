@@ -45,7 +45,7 @@ const Footer = () => {
     },
   ]
   return (
-    <Box component='footer' pb={['20px', '30px']}>
+    <Box component='footer' pb={['20px', '52px']}>
       <Box
         sx={{
           display: 'flex',
