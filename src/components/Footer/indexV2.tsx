@@ -25,7 +25,7 @@ const Footer = () => {
     {
       key: 'terms',
       label: t('Terms of Service'),
-      url: '/',
+      url: '/terms',
     },
     {
       key: 'join',
@@ -36,7 +36,7 @@ const Footer = () => {
     {
       key: 'policy',
       label: t('Cookie Policy'),
-      url: '/',
+      url: '/cookie',
     },
     {
       key: 'contract',

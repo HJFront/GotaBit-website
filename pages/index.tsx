@@ -7,7 +7,6 @@ import CoreModules from 'src/components/Home/CoreModules'
 import BuildIng from 'src/components/Home/BuildIng'
 import { prefix } from 'utils/prefix'
 import Footer from 'src/components/Footer/indexV2'
-import CookieTip from 'src/components/CookieTip'
 
 const Home: NextPage = () => {
   return (
@@ -17,7 +16,6 @@ const Home: NextPage = () => {
         {/* <CoreModules /> */}
         <BuildIng />
         <Footer />
-        <CookieTip />
       </Container>
     </Box>
   )
