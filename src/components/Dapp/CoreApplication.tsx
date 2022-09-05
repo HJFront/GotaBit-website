@@ -44,7 +44,7 @@ const CoreApplication = () => {
   ]
 
   return (
-    <Box mb={['100px', '140px']} position='relative'>
+    <Box mb={['100px', '140px']} position='relative' pt={['100px', '170px']} id='core-ecological-application'>
       <Box
         sx={{
           position: 'relative',

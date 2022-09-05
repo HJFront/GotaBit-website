@@ -25,26 +25,27 @@ const Footer = () => {
     {
       key: 'terms',
       label: t('Terms of Service'),
-      url: '/',
+      url: '/terms',
     },
     {
       key: 'join',
       label: t('Join GotaBit'),
-      url: '/',
+      url: 'https://discord.gg/zhz9C7HB',
+      newTab: true,
     },
     {
       key: 'policy',
       label: t('Cookie Policy'),
-      url: '/',
+      url: '/cookie',
     },
     {
       key: 'contract',
       label: t('Contact Us'),
-      url: '/',
+      url: 'mailto:GotaBit@mate.com',
     },
   ]
   return (
-    <Box component='footer' pb={['20px', '30px']}>
+    <Box component='footer' pb={['20px', '52px']}>
       <Box
         sx={{
           display: 'flex',
@@ -56,13 +57,13 @@ const Footer = () => {
           sx={{
             flex: '1',
             mr: [0, 0, '80px', '140px'],
-            minWidth: ['none', '460px', 'auto'],
+            minWidth: ['100%', '460px', 'auto'],
           }}
         >
           <Box
             sx={{
               width: ['200px', '220px'],
-              mb: ['40px', '106px'],
+              mb: '90px',
               display: ['none', 'none', 'block'],
             }}
           >
@@ -90,6 +91,7 @@ const Footer = () => {
                 overflow: 'hidden',
                 borderTopRightRadius: '0',
                 borderBottomRightRadius: '0',
+                flex: 1,
                 '& .MuiOutlinedInput-notchedOutline': {
                   border: 'none',
                 },
@@ -112,10 +114,11 @@ const Footer = () => {
             </GradientButton>
           </Box>
         </Box>
+
         <Box
           sx={{
             flex: '1',
-            minWidth: ['none', '460px', 'auto'],
+            minWidth: ['100%', '460px', 'auto'],
           }}
         >
           <StyledTypography>{t('About')}</StyledTypography>
@@ -124,6 +127,9 @@ const Footer = () => {
               <Grid item xs={6} key={item.key}>
                 <Link
                   href={item.url}
+                  target={item.newTab ? '_blank' : undefined}
+                  rel='noopener'
+                  underline='none'
                   sx={{
                     flex: 1,
                     fontSize: '14px',

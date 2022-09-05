@@ -4,12 +4,13 @@ import { useTranslation } from 'react-i18next'
 import Container from '@mui/material/Container'
 import GradientButton from '../Buttons/GradientButton'
 import HeroImg from './HeroImg'
+import Link from 'src/components/Link'
 
 const HeroContent = () => {
   const { t } = useTranslation('dapp')
 
   return (
-    <Box position='relative' mb={['100px', '170px']} mt={['24px', '60px']}>
+    <Box position='relative' mt={['24px', '60px']}>
       <Box
         sx={{
           position: 'relative',
@@ -70,21 +71,25 @@ const HeroContent = () => {
           mt: ['40px'],
         }}
       >
-        <GradientButton
-          variant='contained'
-          sx={{
-            height: ['56px', '64px'],
-            width: ['100%', '214px'],
-            borderRadius: ['28px', '32px'],
-            fontSize: ['14px', '18px'],
-            mr: [0, '24px'],
-            mb: ['12px', '0'],
-          }}
-          disableElevation
-        >
-          {t('Create')}
-        </GradientButton>
+        <Link underline='none' target='_blank' rel='noopener' href='https://docs.hjcore.io/develop/overview'>
+          <GradientButton
+            variant='contained'
+            sx={{
+              height: ['56px', '64px'],
+              width: ['100%', '214px'],
+              borderRadius: ['28px', '32px'],
+              fontSize: ['14px', '18px'],
+              mr: [0, '24px'],
+              mb: ['12px', '0'],
+            }}
+            disableElevation
+          >
+            {t('Create')}
+          </GradientButton>
+        </Link>
         <Button
+          component='a'
+          href='#core-ecological-application'
           variant='outlined'
           sx={{
             width: ['100%', '214px'],

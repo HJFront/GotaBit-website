@@ -1,15 +1,16 @@
 {
-  "New Generation Block Network": "New Generation Block Network",
-  "GotaBit Ecosystem": "GotaBit 生态",
-  "An open and interoperable smart contract platform optimised for DeFi applications which can achieve faster, more efficient and lower-cost deployment of applications.": "An open and interoperable smart contract platform optimised for DeFi applications which can achieve faster, more efficient and lower-cost deployment of applications.",
-  "Create": "创建",
-  "Core ecological application": "Core ecological application",
+  "New Generation Block Network": "新一代区块网络",
+  "GotaBit Ecosystem": "GotaBit生态系统",
+  "An open and interoperable smart contract platform optimised for DeFi applications which can achieve faster, more efficient and lower-cost deployment of applications.": "针对 DeFi 性能优化的开放性、可互操作的智能合约系统，可以实现更快、更高效、更低成本的应用开发部署。",
+  "Create": "创造",
+  "Application": "应用",
+  "Core ecological application": "核心生态应用",
   "GID": "GID",
-  "GID is building an end-to-end encrypted login service that will allow users to log in to many websites with a single, transferable identity.": "GID is building an end-to-end encrypted login service that will allow users to log in to many websites with a single, transferable identity.",
+  "GID is building an end-to-end encrypted login service that will allow users to log in to many websites with a single, transferable identity.": "GID 正在构建端到端的加密登录服务，允许用户使用单一、可转移的身份登录到许多网站。",
   "GotaBit NFT": "GotaBit NFT",
-  "GotaBit NFT is an open and transparent NFT trading platform where creators can obtain protection of their rights and income from their works.": "GotaBit NFT is an open and transparent NFT trading platform where creators can obtain protection of their rights and income from their works.",
+  "GotaBit NFT is an open and transparent NFT trading platform where creators can obtain protection of their rights and income from their works.": "GotaBit NFT 是一个公开透明的 NFT 交易平台，创作者可以从作品中获得权利和收入的保护。",
   "GotaBit Swap": "GotaBit Swap",
   "GotaBit Swap is an innovative DEX, NFT marketplace and Launchpad.": "GotaBit Swap 是一个创新的 DEX、NFT 市场和 Launchpad。",
   "GotaBit SDK": "GotaBit SDK",
-  "Gotabit SDK is a development framework for building GotaBit contracts. The purpose of this project is to make the contract development process simple, efficient and scalable.": "Gotabit SDK is a development framework for building GotaBit contracts. The purpose of this project is to make the contract development process simple, efficient and scalable."
+  "Gotabit SDK is a development framework for building GotaBit contracts. The purpose of this project is to make the contract development process simple, efficient and scalable.": "Gotabit SDK 是用于构建 GotaBit 合约的开发框架。该项目的目的是使合约开发过程简单、高效和可扩展。"
 }

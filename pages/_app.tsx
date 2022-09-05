@@ -8,6 +8,7 @@ import InitTheme from 'src/components/InitTheme'
 import InitI18n from 'src/components/InitI18n'
 import ErrorBoundary from 'src/components/ErrorBoundary'
 import GlobalStyles from '@mui/material/GlobalStyles'
+import CooikeProvider from 'src/components/CooikeProvider'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -28,8 +29,12 @@ export default function MyApp(props: MyAppProps) {
           <InitTheme>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
-            <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' }, body: { overflowX: 'hidden' } }} />
-            <Component {...pageProps} />
+            <GlobalStyles
+              styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' }, body: { overflowX: 'hidden' } }}
+            />
+            <CooikeProvider>
+              <Component {...pageProps} />
+            </CooikeProvider>
           </InitTheme>
         </CacheProvider>
       </InitI18n>

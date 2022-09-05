@@ -10,6 +10,7 @@ import styles from 'src/components/LandingBg/index.module.css'
 import GradientButton from 'src/components/Buttons/GradientButton'
 import OutlineButton from 'src/components/Buttons/OutlineButton'
 import StartWithSection from '../StartWithSection'
+import Link from 'src/components/Link'
 
 export const StyledTypography = styled((props: TypographyProps) => (
   <Typography
@@ -68,34 +69,35 @@ const Main = () => {
                 mx: ['20px', 0],
               }}
             >
-              <GradientButton
-                sx={{
-                  width: ['200px', '240px', '280px'],
-                  height: ['50px', '56px', '64px'],
-                  borderRadius: ['50px', '64px'],
-                  fontSize: ['14px', '16px', '18px'],
-                  fontWeight: 500,
-                }}
-                onClick={() => {
-                  window.open('https://docs.hjcore.io/')
-                }}
-              >
-                {t('Start')}
-              </GradientButton>
-              <OutlineButton
-                sx={{
-                  width: ['200px', '240px', '280px'],
-                  height: ['50px', '56px', '64px'],
-                  borderRadius: ['50px', '64px'],
-                  fontSize: ['14px', '16px', '18px'],
-                  fontWeight: 500,
-                  ml: [0, '28px'],
-                  mt: ['30px', 0],
-                  color: 'rgba(255, 255, 255, 1)',
-                }}
-              >
-                {t('Join The Community')}
-              </OutlineButton>
+              <Link underline='none' href='https://docs.hjcore.io/' target='_blank' rel='noopener'>
+                <GradientButton
+                  sx={{
+                    width: ['200px', '240px', '280px'],
+                    height: ['50px', '56px', '64px'],
+                    borderRadius: ['50px', '64px'],
+                    fontSize: ['14px', '16px', '18px'],
+                    fontWeight: 500,
+                  }}
+                >
+                  {t('Start')}
+                </GradientButton>
+              </Link>
+              <Link underline='none' href='https://discord.gg/zhz9C7HB' target='_blank' rel='noopener'>
+                <OutlineButton
+                  sx={{
+                    width: ['200px', '240px', '280px'],
+                    height: ['50px', '56px', '64px'],
+                    borderRadius: ['50px', '64px'],
+                    fontSize: ['14px', '16px', '18px'],
+                    fontWeight: 500,
+                    ml: [0, '28px'],
+                    mt: ['30px', 0],
+                    color: 'rgba(255, 255, 255, 1)',
+                  }}
+                >
+                  {t('Join The Community')}
+                </OutlineButton>
+              </Link>
             </Box>
 
             <StartWithSection />

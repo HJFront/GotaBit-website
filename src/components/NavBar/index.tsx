@@ -74,7 +74,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
             },
             {
               title: t('FQA'),
-              url: '/',
+              url: 'https://docs.hjcore.io/',
             },
           ],
         },
@@ -85,7 +85,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
             {
               title: t('What is GTB?'),
               description: t('Understand the token economics of GTB.'),
-              url: '/',
+              url: 'https://docs.hjcore.io/tutorials/tokens/token',
             },
           ],
         },
@@ -101,11 +101,11 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
             {
               title: t('Documentation'),
               description: t('Search for the required tools and instructions for developing on GotaBit.'),
-              url: '/',
+              url: 'https://docs.hjcore.io/',
             },
             {
               title: t('Github'),
-              url: '/',
+              url: 'https://github.com/gotabit/gotabitjs',
             },
           ],
         },
@@ -132,11 +132,11 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
             {
               title: t('Node Application'),
               description: t('Join the governance of GotaBit ecosystem.'),
-              url: '/',
+              url: 'https://docs.hjcore.io/node/setup/installation',
             },
             {
               title: t('Join Discord'),
-              url: '/',
+              url: 'https://discord.gg/zhz9C7HB',
             },
           ],
         },
@@ -262,7 +262,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
                 alignItems: 'center',
               }}
             >
-              <LanguageSelect isLightColor={isLightColor} />
+              {/* <LanguageSelect isLightColor={isLightColor} /> */}
               <IconButton
                 color='primary'
                 aria-label='open drawer'
@@ -283,7 +283,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
                     height: '48px',
                     width: ['164px'],
                     borderRadius: '24px',
-                    ml: ['20px'],
+                    ml: ['42px'],
                     fontWeight: 500,
                     fontSize: '16px',
                   }}
