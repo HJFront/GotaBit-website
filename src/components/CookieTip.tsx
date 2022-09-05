@@ -5,6 +5,7 @@ import GradientButton from './Buttons/GradientButton'
 
 import { IS_ACCEPT_COOKIE } from 'src/utils/constant'
 import { getLocalStorage, setLocalStorage } from 'src/utils/localStorage'
+import Link from './Link'
 
 const CookieTip = () => {
   const { t } = useTranslation('common')
@@ -51,10 +52,9 @@ const CookieTip = () => {
           }}
         >
           {t('We use cookies to provide the best online experience. By using this website, you agree to our')}{' '}
-          <Box
-            component='a'
+          <Link
             // target='_blank'
-            rel='noopener'
+            // rel='noopener'
             href='/cookie'
             sx={{
               textDecoration: 'none',
@@ -62,12 +62,11 @@ const CookieTip = () => {
             }}
           >
             {t('Cookie')}
-          </Box>{' '}
+          </Link>{' '}
           <Box component='span'>{t('and')}</Box>{' '}
-          <Box
-            component='a'
+          <Link
             // target='_blank'
-            rel='noopener'
+            // rel='noopener'
             href='/terms'
             sx={{
               textDecoration: 'none',
@@ -75,7 +74,7 @@ const CookieTip = () => {
             }}
           >
             {t('Privacy Policy')}
-          </Box>
+          </Link>
           .
         </Typography>
         <GradientButton
