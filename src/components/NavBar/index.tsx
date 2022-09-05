@@ -274,7 +274,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
               </IconButton>
             </Box>
             <Box sx={{ display: ['none', 'none', 'block'] }}>
-              <Link href=''>
+              <Link href='https://station.g.io/' target='_blank' rel='noopener' sx={{ textDecoration: 'none' }}>
                 <GradientButton
                   sx={{
                     display: 'flex',
