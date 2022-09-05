@@ -1,10 +1,24 @@
 import { Box, Container, Typography } from '@mui/material'
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import GradientButton from './Buttons/GradientButton'
 
+import { IS_ACCEPT_COOKIE } from 'src/utils/constant'
+import { getLocalStorage, setLocalStorage } from 'src/utils/localStorage'
+
 const CookieTip = () => {
   const { t } = useTranslation('common')
+  const [isAccept, setIsAccept] = useState(false)
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const isAcceptCookie = useMemo(() => getLocalStorage(IS_ACCEPT_COOKIE), [isAccept])
+
+  const handleClick = () => {
+    setLocalStorage(IS_ACCEPT_COOKIE, 'true')
+    setIsAccept(true)
+  }
+
+  if (isAcceptCookie) return null
 
   return (
     <Container
@@ -39,7 +53,7 @@ const CookieTip = () => {
           {t('We use cookies to provide the best online experience. By using this website, you agree to our')}{' '}
           <Box
             component='a'
-            target='_blank'
+            // target='_blank'
             rel='noopener'
             href='/cookie'
             sx={{
@@ -52,7 +66,7 @@ const CookieTip = () => {
           <Box component='span'>{t('and')}</Box>{' '}
           <Box
             component='a'
-            target='_blank'
+            // target='_blank'
             rel='noopener'
             href='/cookie'
             sx={{
@@ -73,6 +87,7 @@ const CookieTip = () => {
             ml: ['0', '24px'],
             whiteSpace: 'nowrap',
           }}
+          onClick={handleClick}
         >
           {t('Got it')}
         </GradientButton>
