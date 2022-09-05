@@ -15,7 +15,7 @@ const StartWithSection = () => {
       key: 'gotabitScan',
       icon: <ScanIcon />,
       label: t('GotaBit Scan'),
-      url: 'https://docs.hjcore.io/',
+      url: 'https://explorer.hjcore.io/GotaBit-test',
     },
     {
       key: 'gotabitWallet',

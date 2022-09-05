@@ -68,7 +68,7 @@ const CookieTip = () => {
             component='a'
             // target='_blank'
             rel='noopener'
-            href='/cookie'
+            href='/terms'
             sx={{
               textDecoration: 'none',
               color: '#389DFF',

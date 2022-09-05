@@ -67,27 +67,27 @@ const ContactIcons = () => {
   const icons = [
     {
       component: <Telegram />,
-      url: 'https://twitter.com',
+      url: 'https://t.me/gotabit',
     },
     {
       component: <Github />,
-      url: 'https://twitter.com',
+      url: 'https://github.com/gotabit/node',
     },
     {
       component: <Twitter />,
-      url: 'https://twitter.com',
+      url: 'https://twitter.com/GotaBitG',
     },
-    {
-      component: <Reddit />,
-      url: 'https://twitter.com',
-    },
+    // {
+    //   component: <Reddit />,
+    //   url: 'https://twitter.com',
+    // },
     {
       component: <Medium />,
-      url: 'https://twitter.com',
+      url: 'https://medium.com/GotaBitG',
     },
     {
       component: <Facebook />,
-      url: 'https://twitter.com',
+      url: 'https://fb.me/gotabit/',
     },
   ]
   return (
@@ -102,6 +102,8 @@ const ContactIcons = () => {
         <Link
           key={index}
           href={icon.url}
+          target='_blank'
+          rel='noopener'
           sx={{
             ml: ['20px', '30px'],
             '&:first-of-type': {
