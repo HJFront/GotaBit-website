@@ -82,7 +82,7 @@ const Main = () => {
                   {t('Start')}
                 </GradientButton>
               </Link>
-              <Link underline='none' href='https://discord.gg/zhz9C7HB' target='_blank' rel='noopener'>
+              <Link underline='none' href='https://discord.gg/dDgRkVwqD6' target='_blank' rel='noopener'>
                 <OutlineButton
                   sx={{
                     width: ['200px', '240px', '280px'],

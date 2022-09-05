@@ -118,7 +118,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
             },
             {
               title: t('GotaBitscan'),
-              url: '/',
+              url: 'https://explorer.hjcore.io/GotaBit-test',
             },
             {
               title: t('GotaBit Wallet'),
@@ -136,7 +136,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
             },
             {
               title: t('Join Discord'),
-              url: 'https://discord.gg/zhz9C7HB',
+              url: 'https://discord.gg/dDgRkVwqD6',
             },
           ],
         },

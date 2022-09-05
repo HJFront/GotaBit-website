@@ -30,7 +30,7 @@ const Footer = () => {
     {
       key: 'join',
       label: t('Join GotaBit'),
-      url: 'https://discord.gg/zhz9C7HB',
+      url: 'https://discord.gg/dDgRkVwqD6',
       newTab: true,
     },
     {
