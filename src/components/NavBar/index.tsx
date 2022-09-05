@@ -262,7 +262,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
                 alignItems: 'center',
               }}
             >
-              <LanguageSelect isLightColor={isLightColor} />
+              {/* <LanguageSelect isLightColor={isLightColor} /> */}
               <IconButton
                 color='primary'
                 aria-label='open drawer'
@@ -283,7 +283,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
                     height: '48px',
                     width: ['164px'],
                     borderRadius: '24px',
-                    ml: ['20px'],
+                    ml: ['42px'],
                     fontWeight: 500,
                     fontSize: '16px',
                   }}
