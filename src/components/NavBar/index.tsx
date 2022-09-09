@@ -114,7 +114,7 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
           items: [
             {
               title: t('Test the faucet'),
-              url: '/',
+              url: 'https://faucet.gotabit.dev/',
             },
             {
               title: t('GotaBitscan'),
