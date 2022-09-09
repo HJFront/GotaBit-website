@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type { NextPage } from 'next'
-import Footer from 'src/components/Footer/indexV2'
+import Footer from 'src/components/Footer/indexV3'
 import NavBar from 'src/components/NavBar'
 import HeroContent from 'src/components/Dapp/HeroContent'
 import CoreApplication from 'src/components/Dapp/CoreApplication'
