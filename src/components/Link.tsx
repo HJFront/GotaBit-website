@@ -93,10 +93,10 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(props,
         ref={ref}
         {...other}
         sx={{
-          ...other.sx,
           '&:hover': {
             color: 'text.info',
           },
+          ...other.sx,
         }}
       />
     )
@@ -125,10 +125,10 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(props,
       {...nextjsProps}
       {...other}
       sx={{
-        ...other.sx,
         '&:hover': {
           color: 'text.info',
         },
+        ...other.sx,
       }}
     />
   )

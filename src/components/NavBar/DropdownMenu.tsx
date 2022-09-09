@@ -10,6 +10,7 @@ export type DropdownMenuType = {
     title: string
     description?: string
     url: string
+    isInDevelopment?: boolean
   }[]
 }
 interface Props {

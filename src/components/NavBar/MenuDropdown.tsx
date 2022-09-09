@@ -1,6 +1,7 @@
 import { Box, Container, Typography } from '@mui/material'
 import React, { PropsWithChildren } from 'react'
 import ExpandCircleDownOutlinedIcon from '@mui/icons-material/ExpandCircleDownOutlined'
+import { useTranslation } from 'react-i18next'
 import Link from '../Link'
 import { DropdownMenuType } from './DropdownMenu'
 
@@ -12,6 +13,8 @@ interface Props {
 }
 
 const MenuDropdown = ({ navKey, currentNav, dropdownMenu, setCurrentNav, children }: PropsWithChildren<Props>) => {
+  const { t } = useTranslation('index')
+
   const handleOnclick = () => {
     setCurrentNav(isCurrentNav ? '' : navKey)
   }
@@ -26,7 +29,7 @@ const MenuDropdown = ({ navKey, currentNav, dropdownMenu, setCurrentNav, childre
           position: 'fixed',
           width: '100vw',
           left: 0,
-          zIndex: isCurrentNav ? 11 : -1,
+          zIndex: isCurrentNav ? 11 : 1,
           top: '96px',
           overflow: 'hidden',
           paddingBottom: '100px',
@@ -106,6 +109,7 @@ const MenuDropdown = ({ navKey, currentNav, dropdownMenu, setCurrentNav, childre
                           alignItems: 'center',
                           fontSize: 0,
                         }}
+                        onClick={item?.isInDevelopment ? e => e.preventDefault() : undefined}
                       >
                         <ExpandCircleDownOutlinedIcon
                           fontSize='small'
@@ -116,9 +120,24 @@ const MenuDropdown = ({ navKey, currentNav, dropdownMenu, setCurrentNav, childre
                           sx={{
                             fontSize: '18px',
                             fontWeight: '500',
+                            display: 'inline-flex',
+                            alignItems: 'center',
                           }}
                         >
-                          {item.title}{' '}
+                          {item.title}
+                          {item?.isInDevelopment && (
+                            <Typography
+                              component='span'
+                              sx={{
+                                color: '#626365',
+                                fontSize: '12px',
+                                fontWeight: 400,
+                                ml: '8px',
+                              }}
+                            >
+                              ({t('In development')})
+                            </Typography>
+                          )}
                         </Typography>
                       </Link>
                       {item?.description && (

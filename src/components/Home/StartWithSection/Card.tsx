@@ -1,14 +1,28 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
-const Card = ({ icon, label, url }: { icon: React.ReactNode; label: string; url: string }) => {
+const Card = ({
+  icon,
+  label,
+  url,
+  isInDevelopment,
+}: {
+  icon: React.ReactNode
+  label: string
+  url: string
+  isInDevelopment?: boolean
+}) => {
+  const { t } = useTranslation('index')
+
   return (
     <Box
       component='a'
-      href={url}
+      href={isInDevelopment ? undefined : url}
       target='_blank'
       rel='noreferrer'
       sx={{
+        position: 'relative',
         background: '#111820',
         border: '2px solid rgba(255, 255, 255, 0.6)',
         borderRadius: '24px',
@@ -32,8 +46,29 @@ const Card = ({ icon, label, url }: { icon: React.ReactNode; label: string; url:
           background: '#151E27',
         },
         textDecoration: 'none',
+        overflow: 'hidden',
       }}
     >
+      {isInDevelopment && (
+        <Typography
+          component='p'
+          sx={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            backgroundColor: '#003DD9',
+            color: 'rgba(255, 255, 255, 0.7)',
+            fontSize: '10px',
+            fontWeight: 600,
+            textAlign: 'center',
+            px: '16px',
+            py: '6px',
+            borderRadius: '0px 22px',
+          }}
+        >
+          {t('In development')}
+        </Typography>
+      )}
       <Box
         sx={{
           width: ['50px', '50px', '70px'],

@@ -120,9 +120,14 @@ const NavBar = ({ isLightColor }: { isLightColor?: boolean }) => {
               title: t('GotaBitscan'),
               url: 'https://explorer.hjcore.io/GotaBit-test',
             },
+            // {
+            //   title: t('GotaBit Wallet'),
+            //   url: '/',
+            // },
             {
-              title: t('GotaBit Wallet'),
+              title: t('GotaBit APP'),
               url: '/',
+              isInDevelopment: true,
             },
           ],
         },

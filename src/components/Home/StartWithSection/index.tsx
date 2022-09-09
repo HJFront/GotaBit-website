@@ -2,7 +2,8 @@ import { Box } from '@mui/system'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { StyledTypography } from '../Main'
-import WalletIcon from './WalletIcon'
+// import WalletIcon from './WalletIcon'
+import AppIcon from './AppIcon'
 import Card from './Card'
 import ScanIcon from './ScanIcon'
 import ValidatorIcon from './ValidatorIcon'
@@ -17,11 +18,18 @@ const StartWithSection = () => {
       label: t('GotaBit Scan'),
       url: 'https://explorer.hjcore.io/GotaBit-test',
     },
+    // {
+    //   key: 'gotabitWallet',
+    //   icon: <WalletIcon />,
+    //   label: t('GotaBit Wallet'),
+    //   url: 'https://docs.hjcore.io/',
+    // },
     {
-      key: 'gotabitWallet',
-      icon: <WalletIcon />,
-      label: t('GotaBit Wallet'),
+      key: 'gotabitApp',
+      icon: <AppIcon />,
+      label: t('GotaBit APP'),
       url: 'https://docs.hjcore.io/',
+      isInDevelopment: true,
     },
     {
       key: 'validator',
@@ -50,7 +58,13 @@ const StartWithSection = () => {
         }}
       >
         {items.map(item => (
-          <Card key={item.key} url={item.url} icon={item.icon} label={item.label} />
+          <Card
+            key={item.key}
+            url={item.url}
+            icon={item.icon}
+            label={item.label}
+            isInDevelopment={item.isInDevelopment}
+          />
         ))}
       </Box>
     </Box>
