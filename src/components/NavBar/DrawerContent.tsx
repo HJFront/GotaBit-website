@@ -170,7 +170,11 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
                         </Typography>
                         {menu.items.map(item => (
                           <Box key={item.title} ml='18px'>
-                            <Link underline='none' href={item.url}>
+                            <Link
+                              underline='none'
+                              href={item.url}
+                              onClick={item?.isInDevelopment ? e => e.preventDefault() : undefined}
+                            >
                               <Typography
                                 component='h4'
                                 sx={{
@@ -182,11 +186,24 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
                                   mt: '12px',
                                 }}
                               >
-                                {item.title}{' '}
+                                {item.title}
                                 <ExpandCircleDownOutlinedIcon
                                   fontSize='small'
                                   sx={{ transform: 'rotate(-90deg)', ml: '4px', fontWeight: '300' }}
                                 />
+                                {item?.isInDevelopment && (
+                                  <Typography
+                                    component='span'
+                                    sx={{
+                                      color: '#626365',
+                                      fontSize: '12px',
+                                      fontWeight: 400,
+                                      ml: '8px',
+                                    }}
+                                  >
+                                    ({t('In development')})
+                                  </Typography>
+                                )}
                               </Typography>
                             </Link>
                             <Typography component='p' fontSize='12px' color='text.secondary'>
