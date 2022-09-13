@@ -1,10 +1,10 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import Container from '@mui/material/Container'
 import GradientButton from '../Buttons/GradientButton'
 import HeroImg from './HeroImg'
 import Link from 'src/components/Link'
+import OutlineButton from '../Buttons/OutlineButton'
 
 const HeroContent = () => {
   const { t } = useTranslation('dapp')
@@ -87,32 +87,33 @@ const HeroContent = () => {
             {t('Create')}
           </GradientButton>
         </Link>
-        <Button
-          component='a'
-          href='#core-ecological-application'
-          variant='outlined'
-          sx={{
-            width: ['100%', '214px'],
-            height: ['56px', '64px'],
-            color: '#42A2FF',
-            fontSize: ['14px', '18px'],
-            border: '1px solid',
-            borderImageSource:
-              'linear-gradient(93.11deg, #42A2FF 0%, #0B84FF 100%), linear-gradient(0deg, #003DD9, #003DD9)',
-            backgroundColor: ['transparent', '#fff'],
-            borderRadius: ['28px', '32px'],
-            '&:hover': {
-              backgroundColor: ['transparent', '#fff'],
-              boxShadow: 'none',
+        <Link underline='none' href='#core-ecological-application'>
+          <OutlineButton
+            variant='outlined'
+            sx={{
+              width: ['100%', '214px'],
+              height: ['56px', '64px'],
+              color: '#42A2FF',
+              fontSize: ['14px', '18px'],
               border: '1px solid',
               borderImageSource:
                 'linear-gradient(93.11deg, #42A2FF 0%, #0B84FF 100%), linear-gradient(0deg, #003DD9, #003DD9)',
-            },
-          }}
-          disableElevation
-        >
-          {t('Application')}
-        </Button>
+              backgroundColor: ['transparent', '#fff'],
+              borderRadius: ['28px', '32px'],
+              '&:hover': {
+                backgroundColor: ['transparent', '#fff'],
+                boxShadow:
+                  '0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)',
+                border: '1px solid #42A2FF',
+                borderImageSource:
+                  'linear-gradient(93.11deg, #42A2FF 0%, #0B84FF 100%), linear-gradient(0deg, #003DD9, #003DD9)',
+              },
+            }}
+            disableElevation
+          >
+            {t('Application')}
+          </OutlineButton>
+        </Link>
       </Box>
     </Box>
   )

@@ -84,6 +84,7 @@ const CoreApplication = () => {
           background: '#003DD9',
           opacity: '0.1',
           filter: 'blur(250px)',
+          zIndex: -1,
         }}
       ></Box>
     </Box>
