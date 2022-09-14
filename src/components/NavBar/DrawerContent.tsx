@@ -255,7 +255,7 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
         </Box>
       </AppBar>
       <Box px='20px' pb='24px'>
-        <Link href='' sx={{ width: '100%' }}>
+        <Link href='https://station.g.io/' target='_blank' rel='noopener' sx={{ width: '100%' }} underline='none'>
           <GradientButton
             sx={{
               display: 'flex',
@@ -267,7 +267,7 @@ const DrawerContent = ({ onClose, navItems }: { onClose: VoidFunction; navItems:
             }}
           >
             <Box width='18px' height='18px' mr='8px'>
-              <WhiteLogo />
+              <WhiteLogo fillId='drawer' />
             </Box>
             {t('Launch App')}
           </GradientButton>
